@@ -101,14 +101,19 @@ export function About() {
                 </div>
               ))}
             </div>
-            
-            <div className="mt-8 flex gap-3 flex-wrap">
-              <a href="#contact" className="btn-primary">
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:w-fit">
+              <a 
+                href="#contact" 
+                className="btn-primary w-full text-center !px-2 !py-3 !text-[13px] sm:!px-7 sm:!py-3.5 sm:!text-base"
+              >
                 Start Your Project
               </a>
-              <a href="#services" className="btn-gold flex items-center">
+              <a 
+                href="#services" 
+                className="btn-gold flex items-center justify-center w-full text-center !px-2 !py-3 !text-[13px] sm:!px-7 sm:!py-3.5 sm:!text-base"
+              >
                 Explore Services
-                <ArrowRight className="w-4 h-4 ml-1" />
+                <ArrowRight className="w-3.5 h-3.5 ml-1 shrink-0" />
               </a>
             </div>
           </div>
