@@ -35,18 +35,41 @@ export function Nav() {
         </nav>
         <div className="flex items-center gap-3">
           <a href="#contact" className="btn-primary hidden sm:inline-flex">Get Free Estimate</a>
-          <button aria-label="Open menu" onClick={() => setOpen(!open)} className="lg:hidden text-white p-2">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
+          <button 
+            aria-label={open ? "Close menu" : "Open menu"} 
+            onClick={() => setOpen(!open)} 
+            className="lg:hidden text-white p-2.5 relative w-10 h-10 rounded-xl hover:bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300"
+          >
+            <div className="relative w-5 h-5 flex items-center justify-center">
+              <span className={`absolute h-0.5 w-5 bg-current rounded transition-all duration-300 ${open ? 'rotate-45' : '-translate-y-1.5'}`} />
+              <span className={`absolute h-0.5 w-5 bg-current rounded transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
+              <span className={`absolute h-0.5 w-5 bg-current rounded transition-all duration-300 ${open ? '-rotate-45' : 'translate-y-1.5'}`} />
+            </div>
           </button>
         </div>
       </div>
+      
       {open && (
-        <div className="lg:hidden bg-navy-dark border-t border-white/10">
-          <div className="px-6 py-4 flex flex-col gap-1">
+        <div className="absolute top-full left-0 right-0 lg:hidden bg-navy-dark/95 backdrop-blur-xl border-b border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] animate-menu-slide">
+          <div className="px-6 py-6 flex flex-col gap-3">
             {NAV.map((n) => (
-              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="py-2 text-white/85 hover:text-gold">{n.label}</a>
+              <a 
+                key={n.href} 
+                href={n.href} 
+                onClick={() => setOpen(false)} 
+                className="py-2.5 text-base font-medium text-white/85 hover:text-gold transition-colors duration-300 border-b border-white/5 last:border-0 flex items-center justify-between group"
+              >
+                <span>{n.label}</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0" />
+              </a>
             ))}
-            <a href="#contact" onClick={() => setOpen(false)} className="btn-primary mt-3">Get Free Estimate</a>
+            <a 
+              href="#contact" 
+              onClick={() => setOpen(false)} 
+              className="btn-primary w-full text-center py-3.5 mt-3 shadow-[0_10px_20px_-10px_rgba(178,34,34,0.4)]"
+            >
+              Get Free Estimate
+            </a>
           </div>
         </div>
       )}
