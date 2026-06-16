@@ -1,6 +1,7 @@
 import React from "react";
 import { PHONE, PHONE_LINK, NAV, services } from "./Constants";
 import { Logo } from "./Icons";
+import bbbLogo from "@/assets/bbb.png";
 import { Facebook, Instagram, Phone, Mail, MapPin, Clock, User } from "lucide-react";
 
 export function Footer() {
@@ -42,25 +43,41 @@ export function Footer() {
               ))}
             </div>
 
-            {/* Social Follow */}
-            <div className="mt-6">
-              <span className="text-xs uppercase tracking-widest text-white/45 font-bold">Follow Us</span>
-              <div className="flex gap-3 mt-2">
-                <a
-                  href="#"
-                  aria-label="Facebook Page"
-                  className="w-9 h-9 rounded-full border border-white/10 bg-white/5 hover:bg-gold/10 hover:text-gold hover:border-gold/30 flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
-                >
-                  <Facebook className="w-[16px] h-[16px]" />
-                </a>
-                <a
-                  href="#"
-                  aria-label="Instagram Page"
-                  className="w-9 h-9 rounded-full border border-white/10 bg-white/5 hover:bg-gold/10 hover:text-gold hover:border-gold/30 flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
-                >
-                  <Instagram className="w-[16px] h-[16px]" />
-                </a>
+            {/* Social Follow & BBB Accreditation */}
+            <div className="mt-6 flex flex-wrap gap-6 items-end">
+              <div>
+                <span className="text-xs uppercase tracking-widest text-white/45 font-bold">Follow Us</span>
+                <div className="flex gap-3 mt-2">
+                  <a 
+                    href="#" 
+                    aria-label="Facebook Page"
+                    className="w-9 h-9 rounded-full border border-white/10 bg-white/5 hover:bg-gold/10 hover:text-gold hover:border-gold/30 flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
+                  >
+                    <Facebook className="w-[16px] h-[16px]" />
+                  </a>
+                  <a 
+                    href="#" 
+                    aria-label="Instagram Page"
+                    className="w-9 h-9 rounded-full border border-white/10 bg-white/5 hover:bg-gold/10 hover:text-gold hover:border-gold/30 flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
+                  >
+                    <Instagram className="w-[16px] h-[16px]" />
+                  </a>
+                </div>
               </div>
+
+              <a 
+                href="https://www.bbb.org/us/ms/moss-point/profile/home-renovation/blackwater-usa-llc-0523-235906195"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-90 transition-opacity duration-300 block pb-0.5"
+              >
+                <img 
+                  src={bbbLogo} 
+                  alt="BBB Accredited Business" 
+                  className="h-12 w-auto object-contain" 
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
 
