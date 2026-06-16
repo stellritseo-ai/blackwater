@@ -25,3 +25,5 @@ dist-ssr
 
 # TanStack build/cache
 .tanstack
+.output
+.wrangler
