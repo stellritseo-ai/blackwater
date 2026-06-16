@@ -40,3 +40,19 @@ export function Logo({ className = "h-12 w-auto object-contain" }: { className?:
   );
 }
 
+export function GoogleIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.24 10.285V13.4h6.887c-.275 1.565-1.88 4.604-6.887 4.604-4.33 0-7.859-3.578-7.859-8s3.529-8 7.859-8c2.46 0 4.105 1.025 5.047 1.926l2.427-2.334C17.955 2.192 15.34 1 12.24 1 6.033 1 12.24 6.033 1 12.24s5.033 11.24 11.24 11.24c6.478 0 10.793-4.537 10.793-10.986 0-.745-.08-1.3-.173-1.859h-10.62v-.36z" />
+    </svg>
+  );
+}
+
+export function TiktokIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.525.01v15.933a3.541 3.541 0 0 1-3.535 3.535A3.541 3.541 0 0 1 5.455 15.94a3.541 3.541 0 0 1 3.535-3.535c.48 0 .935.1 1.35.275V7.81c-2.885.34-5.32 2.76-5.32 5.735a6.007 6.007 0 0 0 6.005 6.005 6.007 6.007 0 0 0 6.005-6.005V4.65c1.47 1.05 3.285 1.67 5.25 1.67V3.535a6.012 6.012 0 0 1-4.75-2.28v-1.24h-4.75z" />
+    </svg>
+  );
+}
+
