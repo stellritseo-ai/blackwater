@@ -16,13 +16,13 @@ export function TopBar() {
             <PhoneIcon className="w-3.5 h-3.5" /> {PHONE}
           </a>
           <span className="h-4 w-px bg-white/20" />
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <a 
               href="#" 
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Facebook" 
-              className="text-white/60 hover:text-gold transition-colors duration-200"
+              className="w-7 h-7 rounded-lg border border-white/10 bg-white/5 text-white/70 hover:bg-gold/10 hover:text-gold hover:border-gold/30 flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
             >
               <Facebook className="w-3.5 h-3.5" />
             </a>
@@ -31,7 +31,7 @@ export function TopBar() {
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Instagram" 
-              className="text-white/60 hover:text-gold transition-colors duration-200"
+              className="w-7 h-7 rounded-lg border border-white/10 bg-white/5 text-white/70 hover:bg-gold/10 hover:text-gold hover:border-gold/30 flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
             >
               <Instagram className="w-3.5 h-3.5" />
             </a>
@@ -40,7 +40,7 @@ export function TopBar() {
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Google Business" 
-              className="text-white/60 hover:text-gold transition-colors duration-200"
+              className="w-7 h-7 rounded-lg border border-white/10 bg-white/5 text-white/70 hover:bg-gold/10 hover:text-gold hover:border-gold/30 flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
             >
               <GoogleIcon className="w-3.5 h-3.5" />
             </a>
@@ -49,7 +49,7 @@ export function TopBar() {
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="TikTok" 
-              className="text-white/60 hover:text-gold transition-colors duration-200"
+              className="w-7 h-7 rounded-lg border border-white/10 bg-white/5 text-white/70 hover:bg-gold/10 hover:text-gold hover:border-gold/30 flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
             >
               <TiktokIcon className="w-3.5 h-3.5" />
             </a>
