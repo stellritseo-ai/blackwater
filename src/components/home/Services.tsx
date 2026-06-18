@@ -41,6 +41,7 @@ export function Services() {
       desc: "Professional project management and expert construction solutions from start to finish.",
       tags: ["Project Management", "Construction", "New Build"],
       img: sContracting,
+      href: "/general-contracting",
     },
     {
       icon: Bath,
@@ -48,6 +49,7 @@ export function Services() {
       desc: "Create a beautiful and functional bathroom customized to your style and needs.",
       tags: ["Showers & Tubs", "Custom Vanities", "Tile Accents"],
       img: sBathroom,
+      href: "/bathroom-remodeling",
     },
     {
       icon: Utensils,
@@ -55,6 +57,7 @@ export function Services() {
       desc: "Transform your kitchen into the centerpiece of your home with modern finishes and layouts.",
       tags: ["Cabinets", "Countertops", "Backsplash"],
       img: sKitchen,
+      href: "/kitchen-remodeling",
     },
     {
       icon: Wrench,
@@ -62,6 +65,7 @@ export function Services() {
       desc: "Upgrade and enhance existing spaces with quality craftsmanship.",
       tags: ["Home Upgrades", "Remodeling", "Restorations"],
       img: sRenovation,
+      href: "/renovation-services",
     },
     {
       icon: Paintbrush,
@@ -69,6 +73,7 @@ export function Services() {
       desc: "Refresh and protect your property with premium painting services.",
       tags: ["Int/Ext Paint", "Staining", "Premium Finishes"],
       img: sPainting,
+      href: "/painting-services",
     },
     {
       icon: Layers,
@@ -76,6 +81,7 @@ export function Services() {
       desc: "Professional drywall installation, repairs, patching, and finishing.",
       tags: ["Sheetrock", "Taping", "Texturing"],
       img: sDrywall,
+      href: "/drywall-services",
     },
     {
       icon: ShowerHead,
@@ -83,6 +89,7 @@ export function Services() {
       desc: "Reliable plumbing installations, repairs, and upgrades.",
       tags: ["Leaking Pipes", "Fixtures", "Water Heaters"],
       img: sPlumbing,
+      href: "/plumbing-services",
     },
     {
       icon: Zap,
@@ -90,6 +97,7 @@ export function Services() {
       desc: "Safe and efficient electrical solutions performed by experienced professionals.",
       tags: ["Wiring", "Lighting", "Panel Upgrades"],
       img: sElectrical,
+      href: "/electrical-services",
     },
     {
       icon: Home,
@@ -97,6 +105,7 @@ export function Services() {
       desc: "Customized solutions designed specifically for homeowners.",
       tags: ["Home Maintenance", "Upgrades", "Additions"],
       img: sResidential,
+      href: "/residential-services",
     },
     {
       icon: Building2,
@@ -104,6 +113,7 @@ export function Services() {
       desc: "Dependable contracting services tailored to businesses and commercial properties.",
       tags: ["Office Remodels", "Tenant Improvements", "Retail Spaces"],
       img: sCommercial,
+      href: "/commercial-services",
     },
   ];
 
@@ -134,7 +144,7 @@ export function Services() {
               </p>
               <div className="mt-8">
                 <a
-                  href="#contact"
+                  href="/estimate"
                   className="btn-primary"
                 >
                   Get a Free Estimate
@@ -147,7 +157,10 @@ export function Services() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {topItems.map((s, i) => (
               <Reveal key={s.title} variant="reveal-scale" className={`stagger-${i + 1} h-full`}>
-                <div className="group relative rounded-3xl overflow-hidden shadow-lg bg-navy-dark h-[280px] sm:h-[340px] xl:h-[380px] border border-border/20 cursor-pointer">
+                <a
+                  href={s.href}
+                  className="block group relative rounded-3xl overflow-hidden shadow-lg bg-navy-dark h-[280px] sm:h-[340px] xl:h-[380px] border border-border/20 cursor-pointer"
+                >
                   {/* Floating Icon Badge at top left */}
                   <div className="absolute top-4 left-4 z-20 w-10 h-10 rounded-xl bg-navy/80 backdrop-blur-md border border-white/10 flex items-center justify-center text-white shadow-md">
                     <s.icon className="w-5 h-5 text-gold" />
@@ -196,7 +209,7 @@ export function Services() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
               </Reveal>
             ))}
           </div>
@@ -222,7 +235,10 @@ export function Services() {
               <CarouselContent className="-ml-5">
                 {slideItems.map((s, i) => (
                   <CarouselItem key={s.title} className="pl-5 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/5">
-                    <div className="group relative rounded-3xl overflow-hidden shadow-lg bg-navy-dark h-[280px] sm:h-[340px] xl:h-[380px] border border-border/20 cursor-pointer">
+                    <a
+                      href={s.href}
+                      className="block group relative rounded-3xl overflow-hidden shadow-lg bg-navy-dark h-[280px] sm:h-[340px] xl:h-[380px] border border-border/20 cursor-pointer"
+                    >
                       {/* Floating Icon Badge at top left */}
                       <div className="absolute top-4 left-4 z-20 w-10 h-10 rounded-xl bg-navy/80 backdrop-blur-md border border-white/10 flex items-center justify-center text-white shadow-md">
                         <s.icon className="w-5 h-5 text-gold" />
@@ -271,7 +287,7 @@ export function Services() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </a>
                   </CarouselItem>
                 ))}
               </CarouselContent>

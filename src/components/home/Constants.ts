@@ -3,12 +3,12 @@ export const PHONE_LINK = "tel:+12282198338";
 
 export const NAV = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Services", href: "#services" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Reviews", href: "/reviews" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const services = [

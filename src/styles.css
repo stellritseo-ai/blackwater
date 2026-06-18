@@ -114,6 +114,14 @@
   color: transparent;
 }
 
+@utility bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+@utility bg-gradient-cta {
+  background: var(--gradient-cta);
+}
+
 @utility btn-primary {
   display: inline-flex;
   align-items: center;

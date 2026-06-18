@@ -2,16 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { TopBar } from "@/components/home/TopBar";
 import { Nav } from "@/components/home/Nav";
 import { Hero } from "@/components/home/Hero";
-import { About } from "@/components/home/About";
 import { Services } from "@/components/home/Services";
 import { WhyUs } from "@/components/home/WhyUs";
 import { CTABanner } from "@/components/home/CTABanner";
+import { ServiceAreas } from "@/components/home/ServiceAreas";
+import { Footer } from "@/components/home/Footer";
+import { About } from "@/components/home/About";
 import { Reviews } from "@/components/home/Reviews";
 import { Gallery } from "@/components/home/Gallery";
 import { Contact } from "@/components/home/Contact";
-import { ServiceAreas } from "@/components/home/ServiceAreas";
 import { FAQ } from "@/components/home/FAQ";
-import { Footer } from "@/components/home/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({

@@ -7,7 +7,8 @@ export function ServiceAreas() {
     "Moss Point", "Pascagoula", "Gautier",
     "Ocean Springs", "Biloxi", "Gulfport",
     "Vancleave", "Escatawpa", "Hurley",
-    "Wade", "Lucedale", "Gautier Area"
+    "Wade", "Lucedale", "Gautier Area",
+    "Alabama", "Louisiana", "Mississippi"
   ];
 
   return (

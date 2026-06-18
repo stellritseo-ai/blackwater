@@ -1,13 +1,23 @@
 import React from "react";
+import { useLocation } from "@tanstack/react-router";
 import { PHONE, PHONE_LINK, NAV, services } from "./Constants";
 import { Logo } from "./Icons";
 import bbbLogo from "@/assets/bbb.png";
 import { Facebook, Instagram, Phone, Mail, MapPin, Clock, User } from "lucide-react";
 
 export function Footer() {
+  const location = useLocation();
+  const isDedicatedPage = ["/about", "/reviews", "/contact", "/estimate", "/gallery", "/faq", "/general-contracting", "/bathroom-remodeling", "/kitchen-remodeling", "/renovation-services", "/painting-services", "/drywall-services", "/plumbing-services", "/electrical-services", "/residential-services", "/commercial-services"].includes(location.pathname);
+
+  const getHref = (href: string) => {
+    if (["/about", "/reviews", "/contact", "/estimate", "/gallery", "/faq", "/general-contracting", "/bathroom-remodeling", "/kitchen-remodeling", "/renovation-services", "/painting-services", "/drywall-services", "/plumbing-services", "/electrical-services", "/residential-services", "/commercial-services"].includes(href)) return href;
+    return isDedicatedPage ? `/${href}` : href;
+  };
+
   const servedAreas = [
     "Moss Point", "Pascagoula", "Gautier",
-    "Ocean Springs", "Biloxi", "Gulfport"
+    "Ocean Springs", "Biloxi", "Gulfport",
+    "Alabama", "Louisiana", "Mississippi"
   ];
 
   return (
@@ -88,7 +98,7 @@ export function Footer() {
               {NAV.map((n) => (
                 <li key={n.label}>
                   <a
-                    href={n.href}
+                    href={getHref(n.href)}
                     className="hover:text-gold transition-colors duration-300 flex items-center gap-2 group text-white/70"
                   >
                     <span className="w-1 h-1 rounded-full bg-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0" />
@@ -103,17 +113,40 @@ export function Footer() {
           <div>
             <h3 className="text-white font-bold text-[16px] pb-3 border-b border-white/10 mb-5 tracking-wide">Services</h3>
             <ul className="space-y-3.5 text-[14px]">
-              {services.slice(0, 6).map((s) => (
-                <li key={s.t}>
-                  <a
-                    href="#services"
-                    className="hover:text-gold transition-colors duration-300 flex items-center gap-2 group text-white/70"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0" />
-                    {s.t}
-                  </a>
-                </li>
-              ))}
+              {services.slice(0, 10).map((s) => {
+                const isGeneralContracting = s.t === "General Contracting";
+                const isBathroomRemodeling = s.t === "Bathroom Remodeling";
+                const isKitchenRemodeling = s.t === "Kitchen Remodeling";
+                const isRenovationServices = s.t === "Renovation Services";
+                const isPaintingServices = s.t === "Interior & Exterior Painting";
+                const isDrywallServices = s.t === "Drywall Services";
+                const isPlumbingServices = s.t === "Plumbing Services";
+                const isElectricalServices = s.t === "Electrical Services";
+                const isResidentialServices = s.t === "Residential Services";
+                const isCommercialServices = s.t === "Commercial Services";
+                const href = isGeneralContracting ? "/general-contracting" 
+                  : isBathroomRemodeling ? "/bathroom-remodeling" 
+                  : isKitchenRemodeling ? "/kitchen-remodeling" 
+                  : isRenovationServices ? "/renovation-services"
+                  : isPaintingServices ? "/painting-services"
+                  : isDrywallServices ? "/drywall-services"
+                  : isPlumbingServices ? "/plumbing-services"
+                  : isElectricalServices ? "/electrical-services"
+                  : isResidentialServices ? "/residential-services"
+                  : isCommercialServices ? "/commercial-services"
+                  : "#services";
+                return (
+                  <li key={s.t}>
+                    <a
+                      href={getHref(href)}
+                      className="hover:text-gold transition-colors duration-300 flex items-center gap-2 group text-white/70"
+                    >
+                      <span className="w-1 h-1 rounded-full bg-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0" />
+                      {s.t}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -124,11 +157,11 @@ export function Footer() {
               {servedAreas.map((area) => (
                 <li key={area}>
                   <a
-                    href="#service-areas"
+                    href={getHref("#service-areas")}
                     className="hover:text-gold transition-colors duration-300 flex items-center gap-2 group text-white/70"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-gold/20 group-hover:bg-gold transition-colors duration-300 shrink-0" />
-                    {area}, MS
+                    {["Alabama", "Louisiana", "Mississippi"].includes(area) ? area : `${area}, MS`}
                   </a>
                 </li>
               ))}

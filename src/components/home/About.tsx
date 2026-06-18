@@ -104,13 +104,13 @@ export function About() {
             <div className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:w-fit">
               <a 
                 href="#contact" 
-                className="btn-primary w-full text-center !px-2 !py-3 !text-[13px] sm:!px-7 sm:!py-3.5 sm:!text-base"
+                className="btn-primary w-full text-center !px-3 !py-2.5 !text-[12px] sm:!px-5 sm:!py-2.5 sm:!text-sm whitespace-nowrap"
               >
                 Start Your Project
               </a>
               <a 
                 href="#services" 
-                className="btn-gold flex items-center justify-center w-full text-center !px-2 !py-3 !text-[13px] sm:!px-7 sm:!py-3.5 sm:!text-base"
+                className="btn-gold flex items-center justify-center w-full text-center !px-3 !py-2.5 !text-[12px] sm:!px-5 sm:!py-2.5 sm:!text-sm whitespace-nowrap"
               >
                 Explore Services
                 <ArrowRight className="w-3.5 h-3.5 ml-1 shrink-0" />

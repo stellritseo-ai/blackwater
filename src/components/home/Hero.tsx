@@ -36,7 +36,7 @@ export function Hero() {
             and expert assistance with insurance damage repairs.
           </p>
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
-            <a href="#contact" className="btn-primary text-center">Get Your Free Estimate →</a>
+            <a href="/estimate" className="btn-primary text-center">Get Your Free Estimate →</a>
             <a href={PHONE_LINK} className="btn-outline text-center"><PhoneIcon className="w-4 h-4" /> Call Now: {PHONE}</a>
           </div>
           <div className="mt-6 sm:mt-10 flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-2 sm:gap-y-3 text-xs sm:text-sm text-white/85">
@@ -47,10 +47,18 @@ export function Hero() {
         </div>
 
         <div className="lg:col-span-5 relative h-[420px] hidden lg:block">
-          <FloatingCard className="absolute top-0 left-0 w-64 animate-float" icon="🍳" title="Kitchen Remodeling" subtitle="From $18k" tone="white" />
-          <FloatingCard className="absolute top-24 right-0 w-60 animate-float-delayed" icon="🛁" title="Bathroom Renovation" subtitle="Spa-grade finish" tone="navy" />
-          <FloatingCard className="absolute bottom-12 left-8 w-60 animate-float-delayed" icon="🎨" title="Interior Painting" subtitle="Premium coatings" tone="gold" />
-          <FloatingCard className="absolute bottom-0 right-4 w-64 animate-float" icon="🚨" title="Emergency Repairs" subtitle="24/7 response" tone="white" />
+          <a href="/kitchen-remodeling" className="block absolute top-0 left-0 w-64 animate-float hover:scale-[1.03] transition-transform duration-300">
+            <FloatingCard icon="🍳" title="Kitchen Remodeling" subtitle="From $18k" tone="white" />
+          </a>
+          <a href="/bathroom-remodeling" className="block absolute top-24 right-0 w-60 animate-float-delayed hover:scale-[1.03] transition-transform duration-300">
+            <FloatingCard icon="🛁" title="Bathroom Renovation" subtitle="Spa-grade finish" tone="navy" />
+          </a>
+          <a href="/painting-services" className="block absolute bottom-12 left-8 w-60 animate-float-delayed hover:scale-[1.03] transition-transform duration-300">
+            <FloatingCard icon="🎨" title="Interior Painting" subtitle="Premium coatings" tone="gold" />
+          </a>
+          <a href="/contact" className="block absolute bottom-0 right-4 w-64 animate-float hover:scale-[1.03] transition-transform duration-300">
+            <FloatingCard icon="🚨" title="Emergency Repairs" subtitle="24/7 response" tone="white" />
+          </a>
         </div>
       </div>
 
@@ -70,7 +78,7 @@ function FloatingCard({ className, icon, title, subtitle, tone }: { className?: 
   }[tone];
   const goldStyle = tone === "gold" ? { background: "var(--gradient-gold)" } : undefined;
   return (
-    <div className={`${className} ${styles} backdrop-blur-xl rounded-2xl border p-4 shadow-2xl`} style={goldStyle}>
+    <div className={`${className || ""} ${styles} backdrop-blur-xl rounded-2xl border p-4 shadow-2xl`} style={goldStyle}>
       <div className="flex items-center gap-3">
         <div className="w-11 h-11 rounded-xl bg-white/30 grid place-items-center text-xl">{icon}</div>
         <div>

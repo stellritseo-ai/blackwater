@@ -37,7 +37,7 @@ export function CTABanner() {
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center gap-6">
                 <a
-                  href="#contact"
+                  href="/estimate"
                   className="btn-gold flex items-center gap-2 text-[15px] font-bold py-3.5 px-7"
                 >
                   <SlidersHorizontal className="w-[18px] h-[18px]" strokeWidth={2.5} />

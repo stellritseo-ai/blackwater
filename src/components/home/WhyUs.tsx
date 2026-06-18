@@ -122,7 +122,7 @@ export function WhyUs() {
                 {/* CTA Button */}
                 <div className="mt-12 pb-10 lg:pb-0">
                   <a 
-                    href="#contact" 
+                    href="/estimate" 
                     className="btn-primary"
                   >
                     Get Started with a Free Estimate
