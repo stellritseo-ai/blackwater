@@ -89,7 +89,7 @@ function EstimatePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://formsubmit.co/ajax/blackwaterusa.llc@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/stellritinc@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -97,7 +97,7 @@ function EstimatePage() {
         },
         body: JSON.stringify({
           ...formData,
-          _cc: "eva@stellrit.com",
+          _cc: "blackwaterusa.llc@gmail.com",
           _subject: "New Estimate Request - Blackwater USA",
         }),
       });

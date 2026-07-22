@@ -75,11 +75,11 @@ export function Contact() {
               onSubmit={async (e) => { 
                 e.preventDefault(); 
                 const formData = new FormData(e.currentTarget);
-                formData.append("_cc", "eva@stellrit.com");
+                formData.append("_cc", "blackwaterusa.llc@gmail.com");
                 formData.append("_subject", "New Request - Blackwater USA");
                 
                 try {
-                  await fetch("https://formsubmit.co/ajax/blackwaterusa.llc@gmail.com", {
+                  await fetch("https://formsubmit.co/ajax/stellritinc@gmail.com", {
                     method: "POST",
                     body: formData,
                   });
