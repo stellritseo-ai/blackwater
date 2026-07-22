@@ -45,13 +45,13 @@ import g6Img from "@/assets/g6.jpg";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery – Blackwater USA LLC" },
-      { name: "description", content: "Explore our gallery of completed projects by Blackwater USA LLC. See kitchen remodels, bathroom renovations, painting, drywall, plumbing, and electrical work across Moss Point, MS, and the Gulf Coast." },
-      { property: "og:title", content: "Gallery – Blackwater USA LLC" },
-      { property: "og:description", content: "Explore our gallery of completed projects by Blackwater USA LLC. See kitchen remodels, bathroom renovations, painting, drywall, plumbing, and electrical work across Moss Point, MS, and the Gulf Coast." },
-      { property: "og:url", content: "/gallery" },
+      { title: "Project Gallery | Remodeling & Renovations in Moss Point, MS" },
+      { name: "description", content: "View our portfolio of kitchen remodels, bathroom renovations, painting, drywall, and commercial projects across the Gulf Coast. Blackwater USA LLC." },
+      { property: "og:title", content: "Project Gallery | Blackwater USA LLC" },
+      { property: "og:description", content: "View our portfolio of kitchen remodels, bathroom renovations, painting, drywall, and commercial projects across the Gulf Coast. Blackwater USA LLC." },
+      { property: "og:url", content: "https://blackwaterusallc.com/gallery" },
     ],
-    links: [{ rel: "canonical", href: "/gallery" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/gallery" }],
   }),
   component: GalleryPage,
 });

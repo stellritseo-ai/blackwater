@@ -39,13 +39,13 @@ import g6Img from "@/assets/g6.jpg";
 export const Route = createFileRoute("/painting-services")({
   head: () => ({
     meta: [
-      { title: "Interior & Exterior Painting – Professional Finishes That Last" },
-      { name: "description", content: "Expert interior and exterior painting services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:title", content: "Interior & Exterior Painting – Blackwater USA LLC" },
-      { property: "og:description", content: "Expert interior and exterior painting services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:url", content: "/painting-services" },
+      { title: "Painting Contractors | Interior & Exterior | Moss Point, MS" },
+      { name: "description", content: "Expert interior and exterior painting services for residential and commercial properties. Call Blackwater USA LLC for a flawless, long-lasting finish." },
+      { property: "og:title", content: "Painting Services | Blackwater USA LLC" },
+      { property: "og:description", content: "Expert interior and exterior painting services for residential and commercial properties. Call Blackwater USA LLC for a flawless, long-lasting finish." },
+      { property: "og:url", content: "https://blackwaterusallc.com/painting-services" },
     ],
-    links: [{ rel: "canonical", href: "/painting-services" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/painting-services" }],
   }),
   component: PaintingServicesPage,
 });

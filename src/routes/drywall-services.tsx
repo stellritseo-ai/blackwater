@@ -37,13 +37,13 @@ import g6Img from "@/assets/g6.jpg";
 export const Route = createFileRoute("/drywall-services")({
   head: () => ({
     meta: [
-      { title: "Drywall Services – Installation, Repair & Finishing Experts" },
-      { name: "description", content: "Expert drywall installation, repair, and finishing services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:title", content: "Drywall Services – Blackwater USA LLC" },
-      { property: "og:description", content: "Expert drywall installation, repair, and finishing services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:url", content: "/drywall-services" },
+      { title: "Drywall Contractors | Repair & Installation | Moss Point, MS" },
+      { name: "description", content: "Professional drywall installation and repair services by Blackwater USA LLC. We serve residential and commercial properties across the Mississippi Gulf Coast." },
+      { property: "og:title", content: "Drywall Services | Blackwater USA LLC" },
+      { property: "og:description", content: "Professional drywall installation and repair services by Blackwater USA LLC. We serve residential and commercial properties across the Mississippi Gulf Coast." },
+      { property: "og:url", content: "https://blackwaterusallc.com/drywall-services" },
     ],
-    links: [{ rel: "canonical", href: "/drywall-services" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/drywall-services" }],
   }),
   component: DrywallServicesPage,
 });

@@ -37,13 +37,13 @@ import heroImg from "@/assets/hero.jpg";
 export const Route = createFileRoute("/estimate")({
   head: () => ({
     meta: [
-      { title: "Get Free Estimate – Blackwater USA LLC" },
-      { name: "description", content: "Get a free, no-obligation estimate from Blackwater USA LLC. Licensed, insured general contractor serving Moss Point, MS, and 35 miles around. Call (228) 219-8338 or fill out our form – available 24/7." },
-      { property: "og:title", content: "Get Free Estimate – Blackwater USA LLC" },
-      { property: "og:description", content: "Get a free, no-obligation estimate from Blackwater USA LLC. Licensed, insured general contractor serving Moss Point, MS, and 35 miles around. Call (228) 219-8338 or fill out our form – available 24/7." },
-      { property: "og:url", content: "/estimate" },
+      { title: "Get a Free Estimate | General Contractors in Moss Point, MS | Blackwater USA LLC" },
+      { name: "description", content: "Get a free 24/7 estimate from Blackwater USA LLC. Expert remodeling, plumbing, electrical & insurance repair across the Gulf Coast. Serving MS, AL, and LA." },
+      { property: "og:title", content: "Get a Free Estimate | Blackwater USA LLC" },
+      { property: "og:description", content: "Get a free 24/7 estimate from Blackwater USA LLC. Expert remodeling, plumbing, electrical & insurance repair across the Gulf Coast. Serving MS, AL, and LA." },
+      { property: "og:url", content: "https://blackwaterusallc.com/estimate" },
     ],
-    links: [{ rel: "canonical", href: "/estimate" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/estimate" }],
   }),
   component: EstimatePage,
 });

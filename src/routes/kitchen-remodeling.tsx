@@ -39,13 +39,13 @@ import g6Img from "@/assets/g6.jpg";
 export const Route = createFileRoute("/kitchen-remodeling")({
   head: () => ({
     meta: [
-      { title: "Kitchen Remodeling – Design, Build & Transform Your Heart of the Home" },
-      { name: "description", content: "Expert kitchen remodeling services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:title", content: "Kitchen Remodeling – Blackwater USA LLC" },
-      { property: "og:description", content: "Expert kitchen remodeling services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:url", content: "/kitchen-remodeling" },
+      { title: "Kitchen Remodeling & Renovation | Custom Cabinets | Moss Point, MS" },
+      { name: "description", content: "Transform your home with a custom kitchen remodel by Blackwater USA LLC. We offer cabinet installation, countertops, and full renovations across the Gulf Coast." },
+      { property: "og:title", content: "Kitchen Remodeling Services | Blackwater USA LLC" },
+      { property: "og:description", content: "Transform your home with a custom kitchen remodel by Blackwater USA LLC. We offer cabinet installation, countertops, and full renovations across the Gulf Coast." },
+      { property: "og:url", content: "https://blackwaterusallc.com/kitchen-remodeling" },
     ],
-    links: [{ rel: "canonical", href: "/kitchen-remodeling" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/kitchen-remodeling" }],
   }),
   component: KitchenRemodelingPage,
 });

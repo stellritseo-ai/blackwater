@@ -35,13 +35,13 @@ import g3Img from "@/assets/g3.jpg";
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Reviews – Blackwater USA LLC" },
-      { name: "description", content: "Read authentic reviews from homeowners and businesses across Moss Point, Pascagoula, Biloxi, and beyond. Blackwater USA LLC is rated 5 stars for quality, reliability, and 24/7 service." },
-      { property: "og:title", content: "Reviews – Blackwater USA LLC" },
-      { property: "og:description", content: "Read authentic reviews from homeowners and businesses across Moss Point, Pascagoula, Biloxi, and beyond. Blackwater USA LLC is rated 5 stars for quality, reliability, and 24/7 service." },
-      { property: "og:url", content: "/reviews" },
+      { title: "Client Reviews | Top-Rated Contractor in Moss Point, MS" },
+      { name: "description", content: "Read 5-star reviews from satisfied customers of Blackwater USA LLC. Trusted across the Gulf Coast for remodeling, electrical, plumbing, and general contracting." },
+      { property: "og:title", content: "Client Reviews | Blackwater USA LLC" },
+      { property: "og:description", content: "Read 5-star reviews from satisfied customers of Blackwater USA LLC. Trusted across the Gulf Coast for remodeling, electrical, plumbing, and general contracting." },
+      { property: "og:url", content: "https://blackwaterusallc.com/reviews" },
     ],
-    links: [{ rel: "canonical", href: "/reviews" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/reviews" }],
   }),
   component: ReviewsPage,
 });

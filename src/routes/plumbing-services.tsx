@@ -40,13 +40,13 @@ import g6Img from "@/assets/g6.jpg";
 export const Route = createFileRoute("/plumbing-services")({
   head: () => ({
     meta: [
-      { title: "Plumbing Services – 24/7 Emergency & Professional Plumbing Solutions" },
-      { name: "description", content: "Expert plumbing services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 24/7 emergency plumbing, licensed & insured, free estimates. Call (228) 219-8338 today." },
-      { property: "og:title", content: "Plumbing Services – Blackwater USA LLC" },
-      { property: "og:description", content: "Expert plumbing services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 24/7 emergency plumbing, licensed & insured, free estimates. Call (228) 219-8338 today." },
-      { property: "og:url", content: "/plumbing-services" },
+      { title: "Plumbing Services | 24/7 Emergency Plumber | Moss Point, MS" },
+      { name: "description", content: "Reliable plumbing repairs, installations, and 24/7 emergency plumbing services by Blackwater USA LLC. Serving Moss Point and the Mississippi Gulf Coast." },
+      { property: "og:title", content: "Plumbing Services | Blackwater USA LLC" },
+      { property: "og:description", content: "Reliable plumbing repairs, installations, and 24/7 emergency plumbing services by Blackwater USA LLC. Serving Moss Point and the Mississippi Gulf Coast." },
+      { property: "og:url", content: "https://blackwaterusallc.com/plumbing-services" },
     ],
-    links: [{ rel: "canonical", href: "/plumbing-services" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/plumbing-services" }],
   }),
   component: PlumbingServicesPage,
 });

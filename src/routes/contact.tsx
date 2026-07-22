@@ -33,13 +33,13 @@ import heroImg from "@/assets/hero.jpg";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact – Blackwater USA LLC" },
-      { name: "description", content: "Contact Blackwater USA LLC – Moss Point's trusted general contractor. Call (228) 219-8338 for free estimates, emergency repairs, or insurance claim assistance. Open 24/7." },
-      { property: "og:title", content: "Contact – Blackwater USA LLC" },
-      { property: "og:description", content: "Contact Blackwater USA LLC – Moss Point's trusted general contractor. Call (228) 219-8338 for free estimates, emergency repairs, or insurance claim assistance. Open 24/7." },
-      { property: "og:url", content: "/contact" },
+      { title: "Contact Us | Free Estimates in Moss Point & Gulf Coast | Blackwater USA LLC" },
+      { name: "description", content: "Contact Blackwater USA LLC for a free 24/7 estimate on remodeling, renovations, plumbing, and electrical repairs. Serving Moss Point, MS, Alabama, & Louisiana." },
+      { property: "og:title", content: "Contact Us | Free Estimates | Blackwater USA LLC" },
+      { property: "og:description", content: "Contact Blackwater USA LLC for a free 24/7 estimate on remodeling, renovations, plumbing, and electrical repairs. Serving Moss Point, MS, Alabama, & Louisiana." },
+      { property: "og:url", content: "https://blackwaterusallc.com/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/contact" }],
   }),
   component: ContactPage,
 });

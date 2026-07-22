@@ -40,13 +40,13 @@ import g6Img from "@/assets/g6.jpg";
 export const Route = createFileRoute("/electrical-services")({
   head: () => ({
     meta: [
-      { title: "Electrical Services – 24/7 Emergency & Professional Electrical Solutions" },
-      { name: "description", content: "Expert electrical services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 24/7 emergency electrician, licensed & insured, free estimates. Call (228) 219-8338 today." },
-      { property: "og:title", content: "Electrical Services – Blackwater USA LLC" },
-      { property: "og:description", content: "Expert electrical services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 24/7 emergency electrician, licensed & insured, free estimates. Call (228) 219-8338 today." },
-      { property: "og:url", content: "/electrical-services" },
+      { title: "Electrical Services | 24/7 Emergency Electrician | Moss Point, MS" },
+      { name: "description", content: "Expert electrical services, panel upgrades, and 24/7 emergency electrician by Blackwater USA LLC. Serving Moss Point and the Mississippi Gulf Coast." },
+      { property: "og:title", content: "Electrical Services | Blackwater USA LLC" },
+      { property: "og:description", content: "Expert electrical services, panel upgrades, and 24/7 emergency electrician by Blackwater USA LLC. Serving Moss Point and the Mississippi Gulf Coast." },
+      { property: "og:url", content: "https://blackwaterusallc.com/electrical-services" },
     ],
-    links: [{ rel: "canonical", href: "/electrical-services" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/electrical-services" }],
   }),
   component: ElectricalServicesPage,
 });

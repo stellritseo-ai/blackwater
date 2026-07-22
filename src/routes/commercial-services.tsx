@@ -42,13 +42,13 @@ import g6Img from "@/assets/g6.jpg";
 export const Route = createFileRoute("/commercial-services")({
   head: () => ({
     meta: [
-      { title: "Commercial Services – Reliable Contracting for Your Business" },
-      { name: "description", content: "Expert commercial contracting services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:title", content: "Commercial Services – Blackwater USA LLC" },
-      { property: "og:description", content: "Expert commercial contracting services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:url", content: "/commercial-services" },
+      { title: "Commercial Contracting Services | Office & Retail | Moss Point, MS" },
+      { name: "description", content: "Reliable commercial contracting services by Blackwater USA LLC. We provide build-outs, repairs, and renovations for businesses across the Mississippi Gulf Coast." },
+      { property: "og:title", content: "Commercial Services | Blackwater USA LLC" },
+      { property: "og:description", content: "Reliable commercial contracting services by Blackwater USA LLC. We provide build-outs, repairs, and renovations for businesses across the Mississippi Gulf Coast." },
+      { property: "og:url", content: "https://blackwaterusallc.com/commercial-services" },
     ],
-    links: [{ rel: "canonical", href: "/commercial-services" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/commercial-services" }],
   }),
   component: CommercialServicesPage,
 });

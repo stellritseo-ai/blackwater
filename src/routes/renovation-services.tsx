@@ -38,13 +38,13 @@ import g6Img from "@/assets/g6.jpg";
 export const Route = createFileRoute("/renovation-services")({
   head: () => ({
     meta: [
-      { title: "Renovation Services – Transform Your Home or Commercial Space" },
-      { name: "description", content: "Expert renovation services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:title", content: "Renovation Services – Blackwater USA LLC" },
-      { property: "og:description", content: "Expert renovation services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:url", content: "/renovation-services" },
+      { title: "Home & Commercial Renovation Services | Moss Point, MS" },
+      { name: "description", content: "Expert home and commercial renovation services by Blackwater USA LLC. We serve residential and commercial properties across the Mississippi Gulf Coast." },
+      { property: "og:title", content: "Renovation Services | Blackwater USA LLC" },
+      { property: "og:description", content: "Expert home and commercial renovation services by Blackwater USA LLC. We serve residential and commercial properties across the Mississippi Gulf Coast." },
+      { property: "og:url", content: "https://blackwaterusallc.com/renovation-services" },
     ],
-    links: [{ rel: "canonical", href: "/renovation-services" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/renovation-services" }],
   }),
   component: RenovationServicesPage,
 });

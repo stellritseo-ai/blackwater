@@ -34,13 +34,13 @@ import heroImg from "@/assets/hero.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us – Blackwater USA LLC" },
+      { title: "About Us | Licensed General Contractor in Moss Point, MS | Blackwater USA LLC" },
       { name: "description", content: "Blackwater USA LLC is a family-owned, licensed, and insured general contractor in Moss Point, MS. With 43 years of experience, we provide 24/7 kitchen, bathroom, and renovation services across the Gulf Coast." },
-      { property: "og:title", content: "About Us – Blackwater USA LLC" },
+      { property: "og:title", content: "About Us | Licensed General Contractor in Moss Point | Blackwater USA LLC" },
       { property: "og:description", content: "Blackwater USA LLC is a family-owned, licensed, and insured general contractor in Moss Point, MS. With 43 years of experience, we provide 24/7 kitchen, bathroom, and renovation services across the Gulf Coast." },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://blackwaterusallc.com/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/about" }],
   }),
   component: AboutPage,
 });

@@ -40,13 +40,13 @@ import g6Img from "@/assets/g6.jpg";
 export const Route = createFileRoute("/residential-services")({
   head: () => ({
     meta: [
-      { title: "Residential Services – Your Home, Our Expertise" },
-      { name: "description", content: "Comprehensive residential services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:title", content: "Residential Services – Blackwater USA LLC" },
-      { property: "og:description", content: "Comprehensive residential services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:url", content: "/residential-services" },
+      { title: "Residential Home Services & Repairs | Moss Point, MS" },
+      { name: "description", content: "Comprehensive residential services by Blackwater USA LLC. We provide home repairs, renovations, and maintenance across the Mississippi Gulf Coast." },
+      { property: "og:title", content: "Residential Services | Blackwater USA LLC" },
+      { property: "og:description", content: "Comprehensive residential services by Blackwater USA LLC. We provide home repairs, renovations, and maintenance across the Mississippi Gulf Coast." },
+      { property: "og:url", content: "https://blackwaterusallc.com/residential-services" },
     ],
-    links: [{ rel: "canonical", href: "/residential-services" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/residential-services" }],
   }),
   component: ResidentialServicesPage,
 });

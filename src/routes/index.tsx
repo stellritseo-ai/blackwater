@@ -16,13 +16,13 @@ import { FAQ } from "@/components/home/FAQ";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Blackwater USA LLC — General Contractor in Moss Point, MS" },
-      { name: "description", content: "Family-owned general contractors with 43 years of experience serving Moss Point and the Gulf Coast. Kitchen & bath remodeling, renovations, painting, drywall, plumbing, electrical and insurance repairs. Free 24/7 estimates." },
-      { property: "og:title", content: "Blackwater USA LLC — Premium Contractors in Moss Point" },
-      { property: "og:description", content: "43 years of trusted craftsmanship. Licensed, insured & bonded. Call (228) 219-8338." },
-      { property: "og:url", content: "/" },
+      { title: "Moss Point General Contractor | Commercial & Residential | Blackwater USA LLC" },
+      { name: "description", content: "Expert general contractors in Moss Point, MS serving the Gulf Coast, Mississippi, Alabama, & Louisiana. Kitchen/bath remodeling, renovations, plumbing, electrical & insurance repairs. 24/7 Free Estimates." },
+      { property: "og:title", content: "Moss Point General Contractor | Blackwater USA LLC" },
+      { property: "og:description", content: "43 years of trusted craftsmanship. Commercial & residential contractors serving the Gulf Coast. Licensed, insured & bonded. Call (228) 219-8338." },
+      { property: "og:url", content: "https://blackwaterusallc.com/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/" }],
   }),
   component: LandingPage,
 });

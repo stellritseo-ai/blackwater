@@ -38,13 +38,13 @@ import g6Img from "@/assets/g6.jpg";
 export const Route = createFileRoute("/bathroom-remodeling")({
   head: () => ({
     meta: [
-      { title: "Bathroom Remodeling – Transform Your Space into a Sanctuary" },
-      { name: "description", content: "Expert bathroom remodeling services by Blackwater USA LLC in Moss Point, MS, and the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:title", content: "Bathroom Remodeling – Blackwater USA LLC" },
-      { property: "og:description", content: "Expert bathroom remodeling services by Blackwater USA LLC in Moss Point, MS, and the Gulf Coast. 43 years of experience, licensed & insured, free estimates 24/7. Call (228) 219-8338 today." },
-      { property: "og:url", content: "/bathroom-remodeling" },
+      { title: "Bathroom Remodeling & Renovation | Custom Showers | Moss Point, MS" },
+      { name: "description", content: "Upgrade your bathroom with Blackwater USA LLC. We provide custom showers, vanities, and full bathroom renovations across the Mississippi Gulf Coast." },
+      { property: "og:title", content: "Bathroom Remodeling Services | Blackwater USA LLC" },
+      { property: "og:description", content: "Upgrade your bathroom with Blackwater USA LLC. We provide custom showers, vanities, and full bathroom renovations across the Mississippi Gulf Coast." },
+      { property: "og:url", content: "https://blackwaterusallc.com/bathroom-remodeling" },
     ],
-    links: [{ rel: "canonical", href: "/bathroom-remodeling" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/bathroom-remodeling" }],
   }),
   component: BathroomRemodelingPage,
 });

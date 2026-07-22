@@ -31,13 +31,13 @@ import sContracting from "@/assets/s_contracting.png";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "Frequently Asked Questions – Your Trusted Gulf Coast Contractor" },
-      { name: "description", content: "Find answers to common questions about Blackwater USA LLC – free estimates, insurance claims, licensing, 24/7 service, kitchen and bathroom remodeling, and more. Call (228) 219-8338 for expert help." },
-      { property: "og:title", content: "Frequently Asked Questions – Blackwater USA LLC" },
-      { property: "og:description", content: "Find answers to common questions about Blackwater USA LLC – free estimates, insurance claims, licensing, 24/7 service, kitchen and bathroom remodeling, and more. Call (228) 219-8338 for expert help." },
-      { property: "og:url", content: "/faq" },
+      { title: "FAQ | General Contractors Serving Moss Point & Gulf Coast | Blackwater USA LLC" },
+      { name: "description", content: "Answers to common questions about Blackwater USA LLC – free 24/7 estimates, insurance claims, licensing, remodeling in MS, AL, and LA." },
+      { property: "og:title", content: "FAQ | Blackwater USA LLC" },
+      { property: "og:description", content: "Answers to common questions about Blackwater USA LLC – free 24/7 estimates, insurance claims, licensing, remodeling in MS, AL, and LA." },
+      { property: "og:url", content: "https://blackwaterusallc.com/faq" },
     ],
-    links: [{ rel: "canonical", href: "/faq" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/faq" }],
   }),
   component: FAQPage,
 });

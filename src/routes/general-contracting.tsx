@@ -39,13 +39,13 @@ import g6Img from "@/assets/g6.jpg";
 export const Route = createFileRoute("/general-contracting")({
   head: () => ({
     meta: [
-      { title: "General Contracting Services – Licensed, Insured & Experienced" },
-      { name: "description", content: "Blackwater USA LLC offers expert general contracting services in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, 24/7 availability. Call (228) 219-8338 for a free estimate." },
-      { property: "og:title", content: "General Contracting Services – Blackwater USA LLC" },
-      { property: "og:description", content: "Blackwater USA LLC offers expert general contracting services in Moss Point, MS, and across the Gulf Coast. 43 years of experience, licensed & insured, 24/7 availability. Call (228) 219-8338 for a free estimate." },
-      { property: "og:url", content: "/general-contracting" },
+      { title: "General Contracting Services in Moss Point, MS | Blackwater USA LLC" },
+      { name: "description", content: "Expert commercial and residential general contracting on the Gulf Coast. Blackwater USA LLC offers remodeling, restoration, and 24/7 emergency services." },
+      { property: "og:title", content: "General Contracting Services | Blackwater USA LLC" },
+      { property: "og:description", content: "Expert commercial and residential general contracting on the Gulf Coast. Blackwater USA LLC offers remodeling, restoration, and 24/7 emergency services." },
+      { property: "og:url", content: "https://blackwaterusallc.com/general-contracting" },
     ],
-    links: [{ rel: "canonical", href: "/general-contracting" }],
+    links: [{ rel: "canonical", href: "https://blackwaterusallc.com/general-contracting" }],
   }),
   component: GeneralContractingPage,
 });

@@ -102,10 +102,55 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "GeneralContractor"],
+    "name": "Blackwater USA LLC",
+    "url": "https://blackwaterusallc.com",
+    "telephone": "+1-228-219-8338",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3600 Magnolia St",
+      "addressLocality": "Moss Point",
+      "addressRegion": "MS",
+      "postalCode": "39563",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 30.392666,
+      "longitude": -88.544569
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "areaServed": ["Moss Point, MS", "Pascagoula, MS", "Mississippi", "Alabama", "Louisiana"],
+    "priceRange": "$$"
+  };
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script 
+          type="application/ld+json" 
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} 
+        />
+        {/* Google Analytics - Placeholder */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XXXXXXXXXX');
+            `,
+          }}
+        />
       </head>
       <body>
         {children}
