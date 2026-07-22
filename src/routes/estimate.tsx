@@ -86,8 +86,24 @@ function EstimatePage() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    try {
+      await fetch("https://formsubmit.co/ajax/blackwaterusa.llc@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          _cc: "eva@stellrit.com",
+          _subject: "New Estimate Request - Blackwater USA",
+        }),
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
     setSubmitted(true);
   };
 

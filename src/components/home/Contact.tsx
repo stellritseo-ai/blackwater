@@ -72,7 +72,22 @@ export function Contact() {
           {/* Right Column: Form */}
           <Reveal variant="reveal-right">
             <form
-              onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+              onSubmit={async (e) => { 
+                e.preventDefault(); 
+                const formData = new FormData(e.currentTarget);
+                formData.append("_cc", "eva@stellrit.com");
+                formData.append("_subject", "New Request - Blackwater USA");
+                
+                try {
+                  await fetch("https://formsubmit.co/ajax/blackwaterusa.llc@gmail.com", {
+                    method: "POST",
+                    body: formData,
+                  });
+                } catch (error) {
+                  console.error(error);
+                }
+                setSubmitted(true); 
+              }}
               className="bg-white rounded-3xl border border-border p-6 md:p-8 shadow-[var(--shadow-luxe)] relative"
             >
               {submitted ? (
@@ -97,23 +112,23 @@ export function Contact() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs font-semibold uppercase tracking-wider text-navy">Full Name <span className="text-red">*</span></label>
-                      <input required className={inputCls + " mt-1.5"} placeholder="John Doe" />
+                      <input name="name" required className={inputCls + " mt-1.5"} placeholder="John Doe" />
                     </div>
                     <div>
                       <label className="text-xs font-semibold uppercase tracking-wider text-navy">Phone Number <span className="text-red">*</span></label>
-                      <input type="tel" required className={inputCls + " mt-1.5"} placeholder="(228) 219-8338" />
+                      <input type="tel" name="phone" required className={inputCls + " mt-1.5"} placeholder="(228) 219-8338" />
                     </div>
                   </div>
                   
                   <div className="mt-4">
                     <label className="text-xs font-semibold uppercase tracking-wider text-navy">Email Address <span className="text-red">*</span></label>
-                    <input type="email" required className={inputCls + " mt-1.5"} placeholder="john@example.com" />
+                    <input type="email" name="email" required className={inputCls + " mt-1.5"} placeholder="john@example.com" />
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4 mt-4">
                     <div>
                       <label className="text-xs font-semibold uppercase tracking-wider text-navy">Service Needed</label>
-                      <select className={inputCls + " mt-1.5 bg-white"}>
+                      <select name="service" className={inputCls + " mt-1.5 bg-white"}>
                         {["Kitchen Remodeling", "Bathroom Remodeling", "General Contracting", "Renovation", "Painting", "Drywall", "Plumbing", "Electrical", "Insurance Repair", "Other"].map(s => (
                           <option key={s}>{s}</option>
                         ))}
@@ -121,7 +136,7 @@ export function Contact() {
                     </div>
                     <div>
                       <label className="text-xs font-semibold uppercase tracking-wider text-navy">Property Type</label>
-                      <select className={inputCls + " mt-1.5 bg-white"}>
+                      <select name="propertyType" className={inputCls + " mt-1.5 bg-white"}>
                         {["Residential", "Commercial"].map(p => (
                           <option key={p}>{p}</option>
                         ))}
@@ -131,12 +146,12 @@ export function Contact() {
 
                   <div className="mt-4">
                     <label className="text-xs font-semibold uppercase tracking-wider text-navy">Project Details</label>
-                    <textarea rows={4} className={inputCls + " mt-1.5 resize-none"} placeholder="Tell us about your project, square footage, timeline..." />
+                    <textarea name="details" rows={4} className={inputCls + " mt-1.5 resize-none"} placeholder="Tell us about your project, square footage, timeline..." />
                   </div>
 
                   <div className="mt-4">
                     <label className="text-xs font-semibold uppercase tracking-wider text-navy">Preferred Contact Method</label>
-                    <select className={inputCls + " mt-1.5 bg-white"}>
+                    <select name="contactMethod" className={inputCls + " mt-1.5 bg-white"}>
                       {["Phone", "Email", "Text Message"].map(c => (
                         <option key={c}>{c}</option>
                       ))}
