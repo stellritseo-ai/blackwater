@@ -89,7 +89,7 @@ function EstimatePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch("https://formsubmit.co/ajax/blackwaterusa.llc@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/blackwaterusa.llc@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -101,6 +101,13 @@ function EstimatePage() {
           _subject: "New Estimate Request - Blackwater USA",
         }),
       });
+      
+      const result = await response.json();
+      console.log("FormSubmit response:", result);
+      
+      if (!response.ok) {
+        console.error("FormSubmit returned an error:", result);
+      }
     } catch (error) {
       console.error("Form submission error:", error);
     }
