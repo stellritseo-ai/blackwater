@@ -79,7 +79,7 @@ export function Contact() {
                 formData.append("_subject", "New Request - Blackwater USA");
                 
                 try {
-                  await fetch("https://formsubmit.co/ajax/stellritinc@gmail.com", {
+                  await fetch("https://formsubmit.co/ajax/eva@stellrit.com", {
                     method: "POST",
                     body: formData,
                   });

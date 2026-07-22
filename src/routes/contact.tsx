@@ -75,7 +75,7 @@ function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://formsubmit.co/ajax/stellritinc@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/eva@stellrit.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
