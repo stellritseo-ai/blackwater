@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core Pages -->
+  <!-- Core Hub & Brand Pages -->
   <url>
     <loc>https://blackwaterusallc.com/</loc>
     <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://blackwaterusallc.com/service-areas</loc>
+    <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -37,7 +42,27 @@
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Service Categories -->
+  <!-- Core Trade & Service Pages -->
+  <url>
+    <loc>https://blackwaterusallc.com/general-contracting</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://blackwaterusallc.com/kitchen-remodeling</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://blackwaterusallc.com/bathroom-remodeling</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://blackwaterusallc.com/renovation-services</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
   <url>
     <loc>https://blackwaterusallc.com/residential-services</loc>
     <priority>0.9</priority>
@@ -46,23 +71,6 @@
   <url>
     <loc>https://blackwaterusallc.com/commercial-services</loc>
     <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://blackwaterusallc.com/general-contracting</loc>
-    <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <!-- Specific Services -->
-  <url>
-    <loc>https://blackwaterusallc.com/kitchen-remodeling</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://blackwaterusallc.com/bathroom-remodeling</loc>
-    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
@@ -85,9 +93,46 @@
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
+
+  <!-- Dedicated Location Landing Pages (South MS & SW AL) -->
   <url>
-    <loc>https://blackwaterusallc.com/renovation-services</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://blackwaterusallc.com/areas/moss-point-ms</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://blackwaterusallc.com/areas/pascagoula-ms</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://blackwaterusallc.com/areas/gautier-ms</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://blackwaterusallc.com/areas/ocean-springs-ms</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://blackwaterusallc.com/areas/biloxi-ms</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://blackwaterusallc.com/areas/diberville-ms</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://blackwaterusallc.com/areas/grand-bay-al</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://blackwaterusallc.com/areas/theodore-al</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset>

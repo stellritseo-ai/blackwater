@@ -34,10 +34,10 @@ import heroImg from "@/assets/hero.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us | Licensed General Contractor in Moss Point, MS | Blackwater USA LLC" },
-      { name: "description", content: "Blackwater USA LLC is a family-owned, licensed, and insured general contractor in Moss Point, MS. With 43 years of experience, we provide 24/7 kitchen, bathroom, and renovation services across the Gulf Coast." },
-      { property: "og:title", content: "About Us | Licensed General Contractor in Moss Point | Blackwater USA LLC" },
-      { property: "og:description", content: "Blackwater USA LLC is a family-owned, licensed, and insured general contractor in Moss Point, MS. With 43 years of experience, we provide 24/7 kitchen, bathroom, and renovation services across the Gulf Coast." },
+      { title: "About Us | Licensed General Contractor Moss Point MS | Blackwater USA LLC" },
+      { name: "description", content: "Learn about Blackwater USA LLC, licensed & insured general contractor in Moss Point, MS. 43 years of Gulf Coast construction experience & 24/7 free estimates." },
+      { property: "og:title", content: "About Us | Licensed General Contractor Moss Point MS | Blackwater USA LLC" },
+      { property: "og:description", content: "Learn about Blackwater USA LLC, licensed & insured general contractor in Moss Point, MS. 43 years of Gulf Coast construction experience & 24/7 free estimates." },
       { property: "og:url", content: "https://blackwaterusallc.com/about" },
     ],
     links: [{ rel: "canonical", href: "https://blackwaterusallc.com/about" }],
@@ -125,18 +125,64 @@ function AboutPage() {
     },
   ];
 
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://blackwaterusallc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About Us",
+        "item": "https://blackwaterusallc.com/about"
+      }
+    ]
+  };
+
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "GeneralContractor",
+      "name": "Blackwater USA LLC",
+      "founder": {
+        "@type": "Person",
+        "name": "Richard Burns",
+        "jobTitle": "Owner & Master Builder"
+      },
+      "description": "Licensed and insured general contractor in Moss Point, MS with over 43 years of experience specializing in residential and commercial remodeling, renovations, and insurance claim recovery.",
+      "telephone": "+1-228-219-8338",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3600 Magnolia St",
+        "addressLocality": "Moss Point",
+        "addressRegion": "MS",
+        "postalCode": "39563",
+        "addressCountry": "US"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col w-full">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }} />
+
       <TopBar />
       <Nav />
 
       {/* Hero Header */}
-      <section className="relative py-20 lg:py-28 overflow-hidden w-full isolate">
+      <section className="relative py-16 lg:py-24 overflow-hidden w-full isolate">
         {/* Background Image and Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
             src={heroImg} 
-            alt="Blackwater USA general contracting craftsmanship" 
+            alt="Licensed General Contractor Moss Point MS - Blackwater USA LLC" 
             className="w-full h-full object-cover"
           />
           {/* Main dark overlay to match the premium theme and guarantee text contrast */}
@@ -145,19 +191,26 @@ function AboutPage() {
         </div>
         
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          {/* In-page Breadcrumb bar */}
+          <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-xs text-white/60">
+            <a href="/" className="hover:text-gold transition-colors">Home</a>
+            <span>/</span>
+            <span className="text-gold font-medium">About Us</span>
+          </nav>
+
           <div className="max-w-3xl">
             <Reveal variant="reveal" className="flex items-center gap-2 mb-4">
               <span className="h-px w-8 bg-gold" />
-              <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold">About Us</span>
+              <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold font-sans">Our Company</span>
             </Reveal>
             <Reveal variant="reveal" className="stagger-1">
-              <h1 className="text-[34px] sm:text-[46px] lg:text-[56px] font-bold text-white leading-tight tracking-[-0.03em] font-display">
-                Building Gulf Coast Communities for <span className="text-gradient-gold">43 Years</span> – and Counting
+              <h1 className="text-[32px] sm:text-[44px] lg:text-[54px] font-bold text-white leading-tight tracking-[-0.03em] font-display">
+                About Blackwater USA – <span className="text-gradient-gold">Licensed General Contractor</span> in Moss Point, MS
               </h1>
             </Reveal>
             <Reveal variant="reveal" className="stagger-2">
-              <p className="mt-6 text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl font-medium">
-                Blackwater USA LLC is a family-owned, licensed, and insured general contractor in Moss Point, MS. We provide 24/7 kitchen, bathroom, and renovation services across the Gulf Coast.
+              <p className="mt-5 text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl font-medium">
+                Rooted in Jackson County with 43 years of craftsmanship. Delivering licensed, insured, and 24/7 contracting services across South Mississippi and Southwest Alabama.
               </p>
             </Reveal>
           </div>

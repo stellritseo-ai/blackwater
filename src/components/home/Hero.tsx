@@ -28,12 +28,10 @@ export function Hero() {
             Family-Owned • 43 Years of Experience
           </div>
           <h1 className="mt-5 sm:mt-6 font-bold text-[28px] sm:text-[34px] md:text-[40px] leading-[1.2]">
-            Trusted General Contractors Delivering <span className="text-gradient-gold">Quality Craftsmanship</span> Since Day One
+            General Contractor in Moss Point, MS — Delivering <span className="text-gradient-gold">Quality Craftsmanship</span>
           </h1>
           <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-white/80 max-w-2xl leading-relaxed">
-            Blackwater USA LLC proudly provides residential and commercial remodeling and construction
-            services throughout the Moss Point area. Licensed, insured, and bonded — with free estimates 24/7
-            and expert assistance with insurance damage repairs.
+            Blackwater USA LLC is a licensed, bonded, and insured general contractor and remodeling company in Moss Point, MS. We deliver master craftsmanship for residential & commercial remodeling, whole-home renovations, and 24/7 insurance damage repairs across South Mississippi & Southwest Alabama.
           </p>
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
             <a href="/estimate" className="btn-primary text-center">Get Your Free Estimate →</a>

@@ -33,10 +33,10 @@ import heroImg from "@/assets/hero.jpg";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us | Free Estimates in Moss Point & Gulf Coast | Blackwater USA LLC" },
-      { name: "description", content: "Contact Blackwater USA LLC for a free 24/7 estimate on remodeling, renovations, plumbing, and electrical repairs. Serving Moss Point, MS, Alabama, & Louisiana." },
-      { property: "og:title", content: "Contact Us | Free Estimates | Blackwater USA LLC" },
-      { property: "og:description", content: "Contact Blackwater USA LLC for a free 24/7 estimate on remodeling, renovations, plumbing, and electrical repairs. Serving Moss Point, MS, Alabama, & Louisiana." },
+      { title: "Contact Blackwater USA LLC | Moss Point, MS General Contractor" },
+      { name: "description", content: "Contact Blackwater USA LLC for 24/7 general contracting, remodeling, repairs & free estimates in Moss Point, MS and the Gulf Coast. Call (228) 219-8338." },
+      { property: "og:title", content: "Contact Blackwater USA LLC | Moss Point, MS General Contractor" },
+      { property: "og:description", content: "Contact Blackwater USA LLC for 24/7 general contracting, remodeling, repairs & free estimates in Moss Point, MS and the Gulf Coast. Call (228) 219-8338." },
       { property: "og:url", content: "https://blackwaterusallc.com/contact" },
     ],
     links: [{ rel: "canonical", href: "https://blackwaterusallc.com/contact" }],
@@ -153,18 +153,65 @@ function ContactPage() {
     { q: "Are you licensed and insured?", a: "Absolutely. We're licensed, bonded, and fully insured for your protection." }
   ];
 
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://blackwaterusallc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact",
+        "item": "https://blackwaterusallc.com/contact"
+      }
+    ]
+  };
+
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "GeneralContractor",
+      "name": "Blackwater USA LLC",
+      "telephone": "+1-228-219-8338",
+      "email": "blackwaterusa.llc@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3600 Magnolia St",
+        "addressLocality": "Moss Point",
+        "addressRegion": "MS",
+        "postalCode": "39563",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col w-full">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
+
       <TopBar />
       <Nav />
 
       {/* Hero Header */}
-      <section className="relative py-20 lg:py-28 overflow-hidden w-full isolate">
+      <section className="relative py-16 lg:py-24 overflow-hidden w-full isolate">
         {/* Background Image and Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
             src={heroImg} 
-            alt="Blackwater USA general contracting" 
+            alt="Contact Blackwater USA LLC General Contractor in Moss Point MS" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/85 to-navy-dark/70 mix-blend-multiply" />
@@ -172,19 +219,26 @@ function ContactPage() {
         </div>
         
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          {/* In-page Breadcrumb bar */}
+          <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-xs text-white/60">
+            <a href="/" className="hover:text-gold transition-colors">Home</a>
+            <span>/</span>
+            <span className="text-gold font-medium">Contact</span>
+          </nav>
+
           <div className="max-w-3xl">
             <Reveal variant="reveal" className="flex items-center gap-2 mb-4">
               <span className="h-px w-8 bg-gold" />
-              <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold font-sans">Contact Us</span>
+              <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold font-sans">Get In Touch</span>
             </Reveal>
             <Reveal variant="reveal" className="stagger-1">
-              <h1 className="text-[34px] sm:text-[46px] lg:text-[56px] font-bold text-white leading-tight tracking-[-0.03em] font-display">
-                Get in Touch – <span className="text-gradient-gold">Free Estimates</span> 24/7
+              <h1 className="text-[32px] sm:text-[44px] lg:text-[54px] font-bold text-white leading-tight tracking-[-0.03em] font-display">
+                Contact Blackwater USA – <span className="text-gradient-gold">24/7 Contracting Services</span> in Moss Point, MS
               </h1>
             </Reveal>
             <Reveal variant="reveal" className="stagger-2">
-              <p className="mt-6 text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl font-medium">
-                Contact Blackwater USA LLC – Moss Point's trusted general contractor. Call (228) 219-8338 for free estimates, emergency repairs, or insurance claim assistance. Open 24/7.
+              <p className="mt-5 text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl font-medium">
+                Schedule a consultation, request an emergency repair, or get a free estimate. We're on call 24 hours a day, 7 days a week across South Mississippi.
               </p>
             </Reveal>
           </div>

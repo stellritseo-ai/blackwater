@@ -79,6 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "yV-DwzA4D80x3gSigNErFIVdzni91Y7vm5uorTQpDT4" },
       { title: "Blackwater USA LLC — General Contractors in Moss Point, MS" },
       { name: "description", content: "Family-owned general contractors with 43 years of experience. Kitchen & bath remodeling, renovations, painting, drywall, plumbing & electrical. Licensed, insured & bonded. Free 24/7 estimates." },
       { name: "author", content: "Blackwater USA LLC" },
@@ -104,31 +105,84 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: ReactNode }) {
   const schemaData = {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "GeneralContractor"],
-    "name": "Blackwater USA LLC",
-    "url": "https://blackwaterusallc.com",
-    "telephone": "+1-228-219-8338",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "3600 Magnolia St",
-      "addressLocality": "Moss Point",
-      "addressRegion": "MS",
-      "postalCode": "39563",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 30.392666,
-      "longitude": -88.544569
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "areaServed": ["Moss Point, MS", "Pascagoula, MS", "Mississippi", "Alabama", "Louisiana"],
-    "priceRange": "$$"
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "GeneralContractor", "HomeAndConstructionBusiness"],
+        "@id": "https://blackwaterusallc.com/#business",
+        "name": "Blackwater USA LLC",
+        "alternateName": "Blackwater USA Construction & Remodeling",
+        "url": "https://blackwaterusallc.com",
+        "telephone": "+1-228-219-8338",
+        "email": "blackwaterusa.llc@gmail.com",
+        "image": "https://blackwaterusallc.com/assets/hero.jpg",
+        "priceRange": "$$",
+        "paymentAccepted": ["Cash", "Credit Card", "Check", "Insurance Claim Financing"],
+        "currenciesAccepted": "USD",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3600 Magnolia St",
+          "addressLocality": "Moss Point",
+          "addressRegion": "MS",
+          "postalCode": "39563",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 30.392666,
+          "longitude": -88.544569
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        ],
+        "sameAs": [
+          "https://www.bbb.org/us/ms/moss-point/profile/home-renovation/blackwater-usa-llc-0523-235906195"
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Richard Burns",
+          "jobTitle": "Owner & Master Builder"
+        },
+        "description": "Licensed, bonded, and insured general contractor in Moss Point, MS with 43 years of experience. Providing premier residential and commercial remodeling, renovations, kitchen & bath remodels, drywall, painting, plumbing, electrical, and insurance claim repairs across South Mississippi and Southwest Alabama.",
+        "areaServed": [
+          { "@type": "City", "name": "Moss Point", "sameAs": "https://en.wikipedia.org/wiki/Moss_Point,_Mississippi" },
+          { "@type": "City", "name": "Pascagoula", "sameAs": "https://en.wikipedia.org/wiki/Pascagoula,_Mississippi" },
+          { "@type": "City", "name": "Gautier", "sameAs": "https://en.wikipedia.org/wiki/Gautier,_Mississippi" },
+          { "@type": "City", "name": "Ocean Springs", "sameAs": "https://en.wikipedia.org/wiki/Ocean_Springs,_Mississippi" },
+          { "@type": "City", "name": "Biloxi", "sameAs": "https://en.wikipedia.org/wiki/Biloxi,_Mississippi" },
+          { "@type": "City", "name": "D'Iberville", "sameAs": "https://en.wikipedia.org/wiki/D%27Iberville,_Mississippi" },
+          { "@type": "City", "name": "Grand Bay", "sameAs": "https://en.wikipedia.org/wiki/Grand_Bay,_Alabama" },
+          { "@type": "City", "name": "Theodore", "sameAs": "https://en.wikipedia.org/wiki/Theodore,_Alabama" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "General Contracting & Remodeling Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "General Contracting Services", "url": "https://blackwaterusallc.com/general-contracting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen Remodeling", "url": "https://blackwaterusallc.com/kitchen-remodeling" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom Remodeling", "url": "https://blackwaterusallc.com/bathroom-remodeling" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Whole Home Renovation", "url": "https://blackwaterusallc.com/renovation-services" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential Construction & Remodeling", "url": "https://blackwaterusallc.com/residential-services" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Contracting & Tenant Buildouts", "url": "https://blackwaterusallc.com/commercial-services" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interior & Exterior Painting", "url": "https://blackwaterusallc.com/painting-services" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drywall Installation & Repair", "url": "https://blackwaterusallc.com/drywall-services" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plumbing Services & Repairs", "url": "https://blackwaterusallc.com/plumbing-services" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Electrical Services & Upgrades", "url": "https://blackwaterusallc.com/electrical-services" } }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://blackwaterusallc.com/#website",
+        "url": "https://blackwaterusallc.com",
+        "name": "Blackwater USA LLC",
+        "publisher": { "@id": "https://blackwaterusallc.com/#business" }
+      }
+    ]
   };
 
   return (

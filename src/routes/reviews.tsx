@@ -35,10 +35,10 @@ import g3Img from "@/assets/g3.jpg";
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Client Reviews | Top-Rated Contractor in Moss Point, MS" },
-      { name: "description", content: "Read 5-star reviews from satisfied customers of Blackwater USA LLC. Trusted across the Gulf Coast for remodeling, electrical, plumbing, and general contracting." },
-      { property: "og:title", content: "Client Reviews | Blackwater USA LLC" },
-      { property: "og:description", content: "Read 5-star reviews from satisfied customers of Blackwater USA LLC. Trusted across the Gulf Coast for remodeling, electrical, plumbing, and general contracting." },
+      { title: "Client Reviews & Testimonials | Blackwater USA LLC Moss Point, MS" },
+      { name: "description", content: "Read verified 5-star reviews for Blackwater USA LLC in Moss Point, Pascagoula & the Mississippi Gulf Coast. 43 years of trusted remodeling & contracting." },
+      { property: "og:title", content: "Client Reviews & Testimonials | Blackwater USA LLC Moss Point, MS" },
+      { property: "og:description", content: "Read verified 5-star reviews for Blackwater USA LLC in Moss Point, Pascagoula & the Mississippi Gulf Coast. 43 years of trusted remodeling & contracting." },
       { property: "og:url", content: "https://blackwaterusallc.com/reviews" },
     ],
     links: [{ rel: "canonical", href: "https://blackwaterusallc.com/reviews" }],
@@ -126,18 +126,55 @@ function ReviewsPage() {
     },
   ];
 
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://blackwaterusallc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Reviews",
+        "item": "https://blackwaterusallc.com/reviews"
+      }
+    ]
+  };
+
+  const reviewsSchema = {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "name": "Blackwater USA LLC",
+    "telephone": "+1-228-219-8338",
+    "url": "https://blackwaterusallc.com",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "128",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col w-full">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }} />
+
       <TopBar />
       <Nav />
 
       {/* Hero Header */}
-      <section className="relative py-20 lg:py-28 overflow-hidden w-full isolate">
+      <section className="relative py-16 lg:py-24 overflow-hidden w-full isolate">
         {/* Background Image and Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
             src={heroImg} 
-            alt="Blackwater USA contracting reviews" 
+            alt="Client Reviews Moss Point MS - Blackwater USA LLC" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/85 to-navy-dark/70 mix-blend-multiply" />
@@ -145,19 +182,26 @@ function ReviewsPage() {
         </div>
         
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          {/* In-page Breadcrumb bar */}
+          <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-xs text-white/60">
+            <a href="/" className="hover:text-gold transition-colors">Home</a>
+            <span>/</span>
+            <span className="text-gold font-medium">Reviews</span>
+          </nav>
+
           <div className="max-w-3xl">
             <Reveal variant="reveal" className="flex items-center gap-2 mb-4">
               <span className="h-px w-8 bg-gold" />
-              <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold font-sans">Reviews & Trust</span>
+              <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold font-sans">Client Reviews</span>
             </Reveal>
             <Reveal variant="reveal" className="stagger-1">
-              <h1 className="text-[34px] sm:text-[46px] lg:text-[56px] font-bold text-white leading-tight tracking-[-0.03em] font-display">
-                What Our Clients Say – <span className="text-gradient-gold">Real Reviews</span> from the Gulf Coast
+              <h1 className="text-[32px] sm:text-[44px] lg:text-[54px] font-bold text-white leading-tight tracking-[-0.03em] font-display">
+                Client Reviews & Testimonials – <span className="text-gradient-gold">Blackwater USA LLC</span>
               </h1>
             </Reveal>
             <Reveal variant="reveal" className="stagger-2">
-              <p className="mt-6 text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl font-medium">
-                Read authentic reviews from homeowners and businesses across Moss Point, Pascagoula, Biloxi, and beyond. Blackwater USA LLC is rated 4.9 stars for quality, reliability, and 24/7 service.
+              <p className="mt-5 text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl font-medium">
+                Read authentic reviews from homeowners and businesses across Moss Point, Pascagoula, Biloxi, and the Mississippi Gulf Coast.
               </p>
             </Reveal>
           </div>

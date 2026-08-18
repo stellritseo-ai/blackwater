@@ -31,10 +31,10 @@ import sContracting from "@/assets/s_contracting.png";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ | General Contractors Serving Moss Point & Gulf Coast | Blackwater USA LLC" },
-      { name: "description", content: "Answers to common questions about Blackwater USA LLC – free 24/7 estimates, insurance claims, licensing, remodeling in MS, AL, and LA." },
-      { property: "og:title", content: "FAQ | Blackwater USA LLC" },
-      { property: "og:description", content: "Answers to common questions about Blackwater USA LLC – free 24/7 estimates, insurance claims, licensing, remodeling in MS, AL, and LA." },
+      { title: "General Contractor FAQs | Blackwater USA LLC Moss Point, MS" },
+      { name: "description", content: "Frequently asked questions about Blackwater USA LLC: 24/7 emergency response, free estimates, insurance claims & remodeling in Moss Point, MS and Gulf Coast." },
+      { property: "og:title", content: "General Contractor FAQs | Blackwater USA LLC Moss Point, MS" },
+      { property: "og:description", content: "Frequently asked questions about Blackwater USA LLC: 24/7 emergency response, free estimates, insurance claims & remodeling in Moss Point, MS and Gulf Coast." },
       { property: "og:url", content: "https://blackwaterusallc.com/faq" },
     ],
     links: [{ rel: "canonical", href: "https://blackwaterusallc.com/faq" }],
@@ -278,18 +278,87 @@ function FAQPage() {
     setOpenFaq(openFaq === id ? null : id);
   };
 
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://blackwaterusallc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "FAQs",
+        "item": "https://blackwaterusallc.com/faq"
+      }
+    ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are you licensed and insured in Mississippi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Blackwater USA LLC is fully licensed, insured, and bonded in Mississippi. We carry comprehensive liability and workers' compensation coverage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide free estimates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we provide 100% free, no-obligation estimates 24 hours a day, 7 days a week across South Mississippi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer 24/7 emergency repair services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We offer 24/7 emergency response for plumbing leaks, power outages, storm damage, and structural securing across the Gulf Coast."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you work directly with my homeowners insurance company?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We specialize in insurance claim repairs for hurricane, storm, water, and fire damage, handling itemized estimates and adjuster meetings directly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas do you serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We serve Moss Point, Pascagoula, Gautier, Ocean Springs, Biloxi, D'Iberville, Vancleave, Grand Bay (AL), and Theodore (AL)."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col w-full">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
       <TopBar />
       <Nav />
 
       {/* Hero Header */}
-      <section className="relative py-20 lg:py-28 overflow-hidden w-full isolate">
+      <section className="relative py-16 lg:py-24 overflow-hidden w-full isolate">
         {/* Background Image and Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
             src={heroImg} 
-            alt="Blackwater USA FAQ support" 
+            alt="General Contractor FAQs Moss Point MS - Blackwater USA LLC" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/85 to-navy-dark/70 mix-blend-multiply" />
@@ -297,19 +366,26 @@ function FAQPage() {
         </div>
         
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          {/* In-page Breadcrumb bar */}
+          <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-xs text-white/60">
+            <a href="/" className="hover:text-gold transition-colors">Home</a>
+            <span>/</span>
+            <span className="text-gold font-medium">FAQs</span>
+          </nav>
+
           <div className="max-w-3xl">
             <Reveal variant="reveal" className="flex items-center gap-2 mb-4">
               <span className="h-px w-8 bg-gold" />
-              <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold font-sans">Support</span>
+              <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold font-sans">Common Questions</span>
             </Reveal>
             <Reveal variant="reveal" className="stagger-1">
-              <h1 className="text-[34px] sm:text-[46px] lg:text-[56px] font-bold text-white leading-tight tracking-[-0.03em] font-display">
-                Frequently Asked <span className="text-gradient-gold">Questions</span>
+              <h1 className="text-[32px] sm:text-[44px] lg:text-[54px] font-bold text-white leading-tight tracking-[-0.03em] font-display">
+                General Contractor <span className="text-gradient-gold">Frequently Asked Questions</span>
               </h1>
             </Reveal>
             <Reveal variant="reveal" className="stagger-2">
-              <p className="mt-6 text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl font-medium">
-                Find answers to common questions about Blackwater USA LLC – free estimates, insurance claims, licensing, 24/7 service, kitchen and bathroom remodeling, and more.
+              <p className="mt-5 text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl font-medium">
+                Find answers about our 24/7 estimates, licensing, insurance claims, emergency services, and construction timelines in Moss Point, MS and the Gulf Coast.
               </p>
             </Reveal>
           </div>

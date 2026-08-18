@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ServiceAreasRouteImport } from './routes/service-areas'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as ResidentialServicesRouteImport } from './routes/residential-services'
 import { Route as RenovationServicesRouteImport } from './routes/renovation-services'
@@ -26,7 +27,20 @@ import { Route as CommercialServicesRouteImport } from './routes/commercial-serv
 import { Route as BathroomRemodelingRouteImport } from './routes/bathroom-remodeling'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AreasTheodoreAlRouteImport } from './routes/areas/theodore-al'
+import { Route as AreasPascagoulaMsRouteImport } from './routes/areas/pascagoula-ms'
+import { Route as AreasOceanSpringsMsRouteImport } from './routes/areas/ocean-springs-ms'
+import { Route as AreasMossPointMsRouteImport } from './routes/areas/moss-point-ms'
+import { Route as AreasGrandBayAlRouteImport } from './routes/areas/grand-bay-al'
+import { Route as AreasGautierMsRouteImport } from './routes/areas/gautier-ms'
+import { Route as AreasDibervilleMsRouteImport } from './routes/areas/diberville-ms'
+import { Route as AreasBiloxiMsRouteImport } from './routes/areas/biloxi-ms'
 
+const ServiceAreasRoute = ServiceAreasRouteImport.update({
+  id: '/service-areas',
+  path: '/service-areas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReviewsRoute = ReviewsRouteImport.update({
   id: '/reviews',
   path: '/reviews',
@@ -112,6 +126,46 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AreasTheodoreAlRoute = AreasTheodoreAlRouteImport.update({
+  id: '/areas/theodore-al',
+  path: '/areas/theodore-al',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasPascagoulaMsRoute = AreasPascagoulaMsRouteImport.update({
+  id: '/areas/pascagoula-ms',
+  path: '/areas/pascagoula-ms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasOceanSpringsMsRoute = AreasOceanSpringsMsRouteImport.update({
+  id: '/areas/ocean-springs-ms',
+  path: '/areas/ocean-springs-ms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasMossPointMsRoute = AreasMossPointMsRouteImport.update({
+  id: '/areas/moss-point-ms',
+  path: '/areas/moss-point-ms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasGrandBayAlRoute = AreasGrandBayAlRouteImport.update({
+  id: '/areas/grand-bay-al',
+  path: '/areas/grand-bay-al',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasGautierMsRoute = AreasGautierMsRouteImport.update({
+  id: '/areas/gautier-ms',
+  path: '/areas/gautier-ms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasDibervilleMsRoute = AreasDibervilleMsRouteImport.update({
+  id: '/areas/diberville-ms',
+  path: '/areas/diberville-ms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasBiloxiMsRoute = AreasBiloxiMsRouteImport.update({
+  id: '/areas/biloxi-ms',
+  path: '/areas/biloxi-ms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -131,6 +185,15 @@ export interface FileRoutesByFullPath {
   '/renovation-services': typeof RenovationServicesRoute
   '/residential-services': typeof ResidentialServicesRoute
   '/reviews': typeof ReviewsRoute
+  '/service-areas': typeof ServiceAreasRoute
+  '/areas/biloxi-ms': typeof AreasBiloxiMsRoute
+  '/areas/diberville-ms': typeof AreasDibervilleMsRoute
+  '/areas/gautier-ms': typeof AreasGautierMsRoute
+  '/areas/grand-bay-al': typeof AreasGrandBayAlRoute
+  '/areas/moss-point-ms': typeof AreasMossPointMsRoute
+  '/areas/ocean-springs-ms': typeof AreasOceanSpringsMsRoute
+  '/areas/pascagoula-ms': typeof AreasPascagoulaMsRoute
+  '/areas/theodore-al': typeof AreasTheodoreAlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -150,6 +213,15 @@ export interface FileRoutesByTo {
   '/renovation-services': typeof RenovationServicesRoute
   '/residential-services': typeof ResidentialServicesRoute
   '/reviews': typeof ReviewsRoute
+  '/service-areas': typeof ServiceAreasRoute
+  '/areas/biloxi-ms': typeof AreasBiloxiMsRoute
+  '/areas/diberville-ms': typeof AreasDibervilleMsRoute
+  '/areas/gautier-ms': typeof AreasGautierMsRoute
+  '/areas/grand-bay-al': typeof AreasGrandBayAlRoute
+  '/areas/moss-point-ms': typeof AreasMossPointMsRoute
+  '/areas/ocean-springs-ms': typeof AreasOceanSpringsMsRoute
+  '/areas/pascagoula-ms': typeof AreasPascagoulaMsRoute
+  '/areas/theodore-al': typeof AreasTheodoreAlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -170,6 +242,15 @@ export interface FileRoutesById {
   '/renovation-services': typeof RenovationServicesRoute
   '/residential-services': typeof ResidentialServicesRoute
   '/reviews': typeof ReviewsRoute
+  '/service-areas': typeof ServiceAreasRoute
+  '/areas/biloxi-ms': typeof AreasBiloxiMsRoute
+  '/areas/diberville-ms': typeof AreasDibervilleMsRoute
+  '/areas/gautier-ms': typeof AreasGautierMsRoute
+  '/areas/grand-bay-al': typeof AreasGrandBayAlRoute
+  '/areas/moss-point-ms': typeof AreasMossPointMsRoute
+  '/areas/ocean-springs-ms': typeof AreasOceanSpringsMsRoute
+  '/areas/pascagoula-ms': typeof AreasPascagoulaMsRoute
+  '/areas/theodore-al': typeof AreasTheodoreAlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -191,6 +272,15 @@ export interface FileRouteTypes {
     | '/renovation-services'
     | '/residential-services'
     | '/reviews'
+    | '/service-areas'
+    | '/areas/biloxi-ms'
+    | '/areas/diberville-ms'
+    | '/areas/gautier-ms'
+    | '/areas/grand-bay-al'
+    | '/areas/moss-point-ms'
+    | '/areas/ocean-springs-ms'
+    | '/areas/pascagoula-ms'
+    | '/areas/theodore-al'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -210,6 +300,15 @@ export interface FileRouteTypes {
     | '/renovation-services'
     | '/residential-services'
     | '/reviews'
+    | '/service-areas'
+    | '/areas/biloxi-ms'
+    | '/areas/diberville-ms'
+    | '/areas/gautier-ms'
+    | '/areas/grand-bay-al'
+    | '/areas/moss-point-ms'
+    | '/areas/ocean-springs-ms'
+    | '/areas/pascagoula-ms'
+    | '/areas/theodore-al'
   id:
     | '__root__'
     | '/'
@@ -229,6 +328,15 @@ export interface FileRouteTypes {
     | '/renovation-services'
     | '/residential-services'
     | '/reviews'
+    | '/service-areas'
+    | '/areas/biloxi-ms'
+    | '/areas/diberville-ms'
+    | '/areas/gautier-ms'
+    | '/areas/grand-bay-al'
+    | '/areas/moss-point-ms'
+    | '/areas/ocean-springs-ms'
+    | '/areas/pascagoula-ms'
+    | '/areas/theodore-al'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -249,10 +357,26 @@ export interface RootRouteChildren {
   RenovationServicesRoute: typeof RenovationServicesRoute
   ResidentialServicesRoute: typeof ResidentialServicesRoute
   ReviewsRoute: typeof ReviewsRoute
+  ServiceAreasRoute: typeof ServiceAreasRoute
+  AreasBiloxiMsRoute: typeof AreasBiloxiMsRoute
+  AreasDibervilleMsRoute: typeof AreasDibervilleMsRoute
+  AreasGautierMsRoute: typeof AreasGautierMsRoute
+  AreasGrandBayAlRoute: typeof AreasGrandBayAlRoute
+  AreasMossPointMsRoute: typeof AreasMossPointMsRoute
+  AreasOceanSpringsMsRoute: typeof AreasOceanSpringsMsRoute
+  AreasPascagoulaMsRoute: typeof AreasPascagoulaMsRoute
+  AreasTheodoreAlRoute: typeof AreasTheodoreAlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/service-areas': {
+      id: '/service-areas'
+      path: '/service-areas'
+      fullPath: '/service-areas'
+      preLoaderRoute: typeof ServiceAreasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reviews': {
       id: '/reviews'
       path: '/reviews'
@@ -372,6 +496,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/areas/theodore-al': {
+      id: '/areas/theodore-al'
+      path: '/areas/theodore-al'
+      fullPath: '/areas/theodore-al'
+      preLoaderRoute: typeof AreasTheodoreAlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/pascagoula-ms': {
+      id: '/areas/pascagoula-ms'
+      path: '/areas/pascagoula-ms'
+      fullPath: '/areas/pascagoula-ms'
+      preLoaderRoute: typeof AreasPascagoulaMsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/ocean-springs-ms': {
+      id: '/areas/ocean-springs-ms'
+      path: '/areas/ocean-springs-ms'
+      fullPath: '/areas/ocean-springs-ms'
+      preLoaderRoute: typeof AreasOceanSpringsMsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/moss-point-ms': {
+      id: '/areas/moss-point-ms'
+      path: '/areas/moss-point-ms'
+      fullPath: '/areas/moss-point-ms'
+      preLoaderRoute: typeof AreasMossPointMsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/grand-bay-al': {
+      id: '/areas/grand-bay-al'
+      path: '/areas/grand-bay-al'
+      fullPath: '/areas/grand-bay-al'
+      preLoaderRoute: typeof AreasGrandBayAlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/gautier-ms': {
+      id: '/areas/gautier-ms'
+      path: '/areas/gautier-ms'
+      fullPath: '/areas/gautier-ms'
+      preLoaderRoute: typeof AreasGautierMsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/diberville-ms': {
+      id: '/areas/diberville-ms'
+      path: '/areas/diberville-ms'
+      fullPath: '/areas/diberville-ms'
+      preLoaderRoute: typeof AreasDibervilleMsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/biloxi-ms': {
+      id: '/areas/biloxi-ms'
+      path: '/areas/biloxi-ms'
+      fullPath: '/areas/biloxi-ms'
+      preLoaderRoute: typeof AreasBiloxiMsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -393,6 +573,15 @@ const rootRouteChildren: RootRouteChildren = {
   RenovationServicesRoute: RenovationServicesRoute,
   ResidentialServicesRoute: ResidentialServicesRoute,
   ReviewsRoute: ReviewsRoute,
+  ServiceAreasRoute: ServiceAreasRoute,
+  AreasBiloxiMsRoute: AreasBiloxiMsRoute,
+  AreasDibervilleMsRoute: AreasDibervilleMsRoute,
+  AreasGautierMsRoute: AreasGautierMsRoute,
+  AreasGrandBayAlRoute: AreasGrandBayAlRoute,
+  AreasMossPointMsRoute: AreasMossPointMsRoute,
+  AreasOceanSpringsMsRoute: AreasOceanSpringsMsRoute,
+  AreasPascagoulaMsRoute: AreasPascagoulaMsRoute,
+  AreasTheodoreAlRoute: AreasTheodoreAlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

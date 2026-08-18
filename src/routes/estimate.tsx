@@ -37,10 +37,10 @@ import heroImg from "@/assets/hero.jpg";
 export const Route = createFileRoute("/estimate")({
   head: () => ({
     meta: [
-      { title: "Get a Free Estimate | General Contractors in Moss Point, MS | Blackwater USA LLC" },
-      { name: "description", content: "Get a free 24/7 estimate from Blackwater USA LLC. Expert remodeling, plumbing, electrical & insurance repair across the Gulf Coast. Serving MS, AL, and LA." },
-      { property: "og:title", content: "Get a Free Estimate | Blackwater USA LLC" },
-      { property: "og:description", content: "Get a free 24/7 estimate from Blackwater USA LLC. Expert remodeling, plumbing, electrical & insurance repair across the Gulf Coast. Serving MS, AL, and LA." },
+      { title: "Free Contractor Estimate 24/7 | Blackwater USA LLC Moss Point, MS" },
+      { name: "description", content: "Request a 100% free, 24/7 estimate for remodeling, construction, plumbing, electrical & repairs in Moss Point, MS and the Gulf Coast. Call (228) 219-8338." },
+      { property: "og:title", content: "Free Contractor Estimate 24/7 | Blackwater USA LLC Moss Point, MS" },
+      { property: "og:description", content: "Request a 100% free, 24/7 estimate for remodeling, construction, plumbing, electrical & repairs in Moss Point, MS and the Gulf Coast. Call (228) 219-8338." },
       { property: "og:url", content: "https://blackwaterusallc.com/estimate" },
     ],
     links: [{ rel: "canonical", href: "https://blackwaterusallc.com/estimate" }],
@@ -186,18 +186,39 @@ function EstimatePage() {
     "Full repair management from start to finish"
   ];
 
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://blackwaterusallc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Free Estimate",
+        "item": "https://blackwaterusallc.com/estimate"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col w-full">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }} />
+
       <TopBar />
       <Nav />
 
       {/* Hero Header */}
-      <section className="relative py-20 lg:py-28 overflow-hidden w-full isolate">
+      <section className="relative py-16 lg:py-24 overflow-hidden w-full isolate">
         {/* Background Image and Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
             src={heroImg} 
-            alt="Blackwater USA estimating" 
+            alt="Free Contractor Estimate Moss Point MS - Blackwater USA LLC" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/85 to-navy-dark/70 mix-blend-multiply" />
@@ -205,19 +226,26 @@ function EstimatePage() {
         </div>
         
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          {/* In-page Breadcrumb bar */}
+          <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-xs text-white/60">
+            <a href="/" className="hover:text-gold transition-colors">Home</a>
+            <span>/</span>
+            <span className="text-gold font-medium">Free Estimate</span>
+          </nav>
+
           <div className="max-w-3xl">
             <Reveal variant="reveal" className="flex items-center gap-2 mb-4">
               <span className="h-px w-8 bg-gold" />
-              <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold font-sans">Free Estimate</span>
+              <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold font-sans">24/7 Quotes</span>
             </Reveal>
             <Reveal variant="reveal" className="stagger-1">
-              <h1 className="text-[34px] sm:text-[46px] lg:text-[56px] font-bold text-white leading-tight tracking-[-0.03em] font-display">
-                Free Estimates 24/7 – <span className="text-gradient-gold">No Obligation</span>, No Pressure
+              <h1 className="text-[32px] sm:text-[44px] lg:text-[54px] font-bold text-white leading-tight tracking-[-0.03em] font-display">
+                Free Contractor Estimate – <span className="text-gradient-gold">Moss Point & Gulf Coast, MS</span>
               </h1>
             </Reveal>
             <Reveal variant="reveal" className="stagger-2">
-              <p className="mt-6 text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl font-medium">
-                Get a free, no-obligation estimate from Blackwater USA LLC. Licensed, insured general contractor serving Moss Point, MS, and 35 miles around. Call (228) 219-8338 or fill out our form.
+              <p className="mt-5 text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl font-medium">
+                Get a transparent, itemized estimate with zero obligations. Available 24/7 for residential, commercial, and insurance claim projects.
               </p>
             </Reveal>
           </div>

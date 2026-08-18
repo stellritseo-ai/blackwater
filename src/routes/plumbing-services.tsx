@@ -40,10 +40,10 @@ import g6Img from "@/assets/g6.jpg";
 export const Route = createFileRoute("/plumbing-services")({
   head: () => ({
     meta: [
-      { title: "Plumbing Services | 24/7 Emergency Plumber | Moss Point, MS" },
-      { name: "description", content: "Reliable plumbing repairs, installations, and 24/7 emergency plumbing services by Blackwater USA LLC. Serving Moss Point and the Mississippi Gulf Coast." },
-      { property: "og:title", content: "Plumbing Services | Blackwater USA LLC" },
-      { property: "og:description", content: "Reliable plumbing repairs, installations, and 24/7 emergency plumbing services by Blackwater USA LLC. Serving Moss Point and the Mississippi Gulf Coast." },
+      { title: "Plumbing Contractor in Moss Point, MS | Blackwater USA LLC" },
+      { name: "description", content: "24/7 plumbing contractor in Moss Point, Pascagoula & Gulf Coast MS. 43 years experience in pipe leak repair, water heater installation & emergency service." },
+      { property: "og:title", content: "Plumbing Contractor in Moss Point, MS | Blackwater USA LLC" },
+      { property: "og:description", content: "Reliable residential and commercial plumbing repairs, pipe replacements, and 24/7 emergency response across South Mississippi." },
       { property: "og:url", content: "https://blackwaterusallc.com/plumbing-services" },
     ],
     links: [{ rel: "canonical", href: "https://blackwaterusallc.com/plumbing-services" }],
@@ -200,17 +200,73 @@ function PlumbingServicesPage() {
     setOpenFaq(openFaq === id ? null : id);
   };
 
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://blackwaterusallc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://blackwaterusallc.com/#services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Plumbing Services",
+        "item": "https://blackwaterusallc.com/plumbing-services"
+      }
+    ]
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Plumbing Contractor",
+    "provider": {
+      "@type": "GeneralContractor",
+      "name": "Blackwater USA LLC",
+      "telephone": "+1-228-219-8338",
+      "url": "https://blackwaterusallc.com"
+    },
+    "areaServed": ["Moss Point, MS", "Pascagoula, MS", "Gautier, MS", "Ocean Springs, MS", "Biloxi, MS", "D'Iberville, MS", "Grand Bay, AL", "Theodore, AL"],
+    "description": "Licensed residential and commercial plumbing services, emergency leak repairs, repiping, water heater installation, and fixture upgrades in South Mississippi."
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col w-full">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
       <TopBar />
       <Nav />
 
       {/* Hero Header */}
-      <section className="relative py-20 lg:py-28 overflow-hidden w-full isolate">
+      <section className="relative py-16 lg:py-24 overflow-hidden w-full isolate">
         <div className="absolute inset-0 z-0">
           <img 
             src={sPlumbing} 
-            alt="Blackwater USA plumbing services" 
+            alt="Plumbing Contractor in Moss Point MS - Blackwater USA LLC" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/85 to-navy-dark/70 mix-blend-multiply" />
@@ -218,19 +274,28 @@ function PlumbingServicesPage() {
         </div>
         
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          {/* In-page Breadcrumb bar */}
+          <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-xs text-white/60">
+            <a href="/" className="hover:text-gold transition-colors">Home</a>
+            <span>/</span>
+            <a href="/#services" className="hover:text-gold transition-colors">Services</a>
+            <span>/</span>
+            <span className="text-gold font-medium">Plumbing Services</span>
+          </nav>
+
           <div className="max-w-3xl">
             <Reveal variant="reveal" className="flex items-center gap-2 mb-4">
               <span className="h-px w-8 bg-gold" />
-              <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold font-sans">Specialties</span>
+              <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold font-sans">Licensed Plumbers</span>
             </Reveal>
             <Reveal variant="reveal" className="stagger-1">
-              <h1 className="text-[34px] sm:text-[46px] lg:text-[56px] font-bold text-white leading-tight tracking-[-0.03em] font-display">
-                Plumbing Services – <span className="text-gradient-gold">24/7 Emergency & Professional Solutions</span>
+              <h1 className="text-[32px] sm:text-[44px] lg:text-[54px] font-bold text-white leading-tight tracking-[-0.03em] font-display">
+                Plumbing Contractor in <span className="text-gradient-gold">Moss Point, MS</span>
               </h1>
             </Reveal>
             <Reveal variant="reveal" className="stagger-2">
-              <p className="mt-6 text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl font-medium">
-                Expert plumbing services by Blackwater USA LLC in Moss Point, MS, and across the Gulf Coast. 24/7 emergency plumbing, licensed & insured, free estimates. Call (228) 219-8338 today.
+              <p className="mt-5 text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl font-medium">
+                Reliable plumbing repairs, repiping, water heater installations, and 24/7 emergency response in Moss Point, Pascagoula, and across the Gulf Coast.
               </p>
             </Reveal>
           </div>
@@ -767,6 +832,24 @@ function PlumbingServicesPage() {
             })}
           </div>
 
+        </div>
+      </section>
+
+      {/* Service Areas Cross-Linking */}
+      <section className="py-12 bg-secondary/40 border-t border-border">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 text-center">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-navy mb-4">Plumbing Service Areas:</h3>
+          <div className="flex flex-wrap justify-center gap-2.5">
+            <a href="/areas/moss-point-ms" className="px-3.5 py-2 rounded-xl bg-white border border-border text-xs font-semibold text-navy hover:text-red hover:border-gold transition-colors">Moss Point, MS</a>
+            <a href="/areas/pascagoula-ms" className="px-3.5 py-2 rounded-xl bg-white border border-border text-xs font-semibold text-navy hover:text-red hover:border-gold transition-colors">Pascagoula, MS</a>
+            <a href="/areas/gautier-ms" className="px-3.5 py-2 rounded-xl bg-white border border-border text-xs font-semibold text-navy hover:text-red hover:border-gold transition-colors">Gautier, MS</a>
+            <a href="/areas/ocean-springs-ms" className="px-3.5 py-2 rounded-xl bg-white border border-border text-xs font-semibold text-navy hover:text-red hover:border-gold transition-colors">Ocean Springs, MS</a>
+            <a href="/areas/biloxi-ms" className="px-3.5 py-2 rounded-xl bg-white border border-border text-xs font-semibold text-navy hover:text-red hover:border-gold transition-colors">Biloxi, MS</a>
+            <a href="/areas/diberville-ms" className="px-3.5 py-2 rounded-xl bg-white border border-border text-xs font-semibold text-navy hover:text-red hover:border-gold transition-colors">D'Iberville, MS</a>
+            <a href="/areas/grand-bay-al" className="px-3.5 py-2 rounded-xl bg-white border border-border text-xs font-semibold text-navy hover:text-red hover:border-gold transition-colors">Grand Bay, AL</a>
+            <a href="/areas/theodore-al" className="px-3.5 py-2 rounded-xl bg-white border border-border text-xs font-semibold text-navy hover:text-red hover:border-gold transition-colors">Theodore, AL</a>
+            <a href="/service-areas" className="px-3.5 py-2 rounded-xl bg-navy text-white text-xs font-bold hover:bg-navy-dark transition-colors">View All Service Areas →</a>
+          </div>
         </div>
       </section>
 
